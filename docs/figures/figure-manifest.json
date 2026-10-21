@@ -1,0 +1,12 @@
+{
+  "kind": "conceptual model-bookkeeping diagram",
+  "arrows": "relationships between modeling steps; not biochemical reaction edges",
+  "source_sha256": {
+    "scenarios.json": "4ac25a5af7981f99c06ac8a2142c933042be53f851a8b51c4cc6905df5b5eee3",
+    "docs/methods.md": "3f780d270e29bfee79f73f49c92bae75afb822be874f9045c1c7249da88f4819",
+    "data/provenance.json": "d7fb2e89f4e307ca5ba34d33f0a3693c0e5ca87ac6e7c4e80ebe3f7d7f7b254b"
+  },
+  "output_sha256": {
+    "model-bookkeeping.svg": "207386126e5657c4da276e945612735234bd06c5c8f2536ac0fd06ec8c6249fa"
+  }
+}

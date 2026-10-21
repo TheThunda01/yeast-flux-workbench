@@ -6,6 +6,12 @@ Which metabolic conclusions follow from a model's constraints, and which depend 
 
 Genome-scale models describe many reactions across an organism’s metabolism. They make biological assumptions concrete: reactions conserve modeled metabolites, nutrients enter through bounded exchanges, and a chosen objective defines an optimum. Those assumptions deserve as much attention as the final growth number. This workbench follows them from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
 
+Figure 1 follows the bookkeeping from those assumptions to the reported results. It separates the biomass-assembly reaction from the drain that the optimizer maximizes.
+
+![Model-bookkeeping diagram connecting exchange bounds and retained constraints to balanced fluxes, biomass assembly, the growth drain, and FBA or FVA outputs](docs/figures/model-bookkeeping.svg)
+
+**Figure 1. Constraints define a set of model possibilities.** This is a conceptual map of the implemented calculation, not a reaction-by-reaction metabolic pathway. The reaction identifiers come from the [pinned model](data/README.md); the [methods](docs/methods.md) define signs, growth floors and numerical slack. The [figure builder](tools/build_documentation_figures.py) and [source manifest](docs/figures/figure-manifest.json) make the diagram reproducible.
+
 ## What it does
 
 - Loads the official **yeast-GEM v9.1.1** snapshot: 2,748 metabolites, 4,105 reactions and 1,143 genes. These are this snapshot's counts, not the counts of the earlier publication version.
@@ -34,6 +40,10 @@ The 530 kB model and source license are included; the analysis needs no network 
 
 The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour. Limiting the oxygen-uptake cap to 1 while retaining the glucose cap of 1 gives about **0.0420 h⁻¹**. These are solutions to the specified optimization problem, not measured growth rates.
 
+**Table 1. Where to inspect each part of the result.**
+
+Table 1 links the files behind Figures 2 and 3 and the associated numerical checks.
+
 | Output | What to inspect |
 | --- | --- |
 | [Report](results/report.md) and [scenario table](results/scenarios.csv) | Six statuses and optimal-growth values; an infeasible case has no substituted growth value. |
@@ -42,9 +52,15 @@ The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**
 | [Saved flux vectors](results/fba_fluxes.npz) | Complete feasible FBA vectors, read with NumPy `allow_pickle=False`. |
 | [Run manifest](results/manifest.json) | Source/config/code fingerprints, runtime and solver settings, output hashes. |
 
+Figures 2 and 3 answer different questions: how the optimum changes under oxygen caps, and how much freedom remains for one selected exchange flux.
+
 ![Growth under declared oxygen caps](results/growth_constraints.png)
 
+**Figure 2. Modeled growth under declared oxygen-uptake caps.** Source: [scenario results](results/scenarios.csv). Glucose and the other deposited constraints are retained. These are optimization results, not measured growth responses.
+
 ![Conditional ethanol flux ranges](results/ethanol_fva.png)
+
+**Figure 3. Conditional ethanol-exchange ranges.** Source: [saved FVA results](results/fva.csv). The growth fractions and numerical slack define different feasible sets; the intervals are neither confidence intervals nor samples from a probability distribution.
 
 The plotted intervals are individual feasible ranges. Endpoints from different reactions need not occur in the same solution. Their width is not a confidence interval.
 
@@ -73,3 +89,5 @@ Definitions and interpretation: [glossary](docs/glossary.md), [assumptions](docs
 Twelve tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals and the full-model verification. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
 
 Original code is [MIT licensed](LICENSE). The model and its medium definition retain [CC BY 4.0 attribution](data/UPSTREAM_LICENSE.md); the MIT license does not replace those terms.
+
+Rebuild Figure 1 with `python tools/build_documentation_figures.py`. It writes only `docs/figures/` and does not modify the model or saved optimization results.

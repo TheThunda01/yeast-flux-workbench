@@ -14,6 +14,22 @@ Cells also require energy beyond the modeled cost of making new biomass. A non-g
 
 ## Turning reactions into a constrained problem
 
+Figure 1 summarizes the bookkeeping described above. Its arrows connect modeling steps, not individual biochemical reactions.
+
+![Exchange bounds and retained assumptions constrain a balanced network; biomass assembly feeds the optimized drain, with separate FBA and FVA outputs](figures/model-bookkeeping.svg)
+
+**Figure 1. From declared bounds to conditional flux results.** Sources: the [pinned model and medium](../data/README.md), [scenario configuration](../scenarios.json) and [implemented formulation](methods.md). The [figure builder](../tools/build_documentation_figures.py) generates this schematic. Table 1 provides a text equivalent for its main choices.
+
+**Table 1. What each modeling choice does—and does not establish.**
+
+| Choice in Figure 1 | Role in this workbench | Interpretation limit |
+| --- | --- | --- |
+| Glucose and oxygen exchange bounds | Restrict allowed uptake rates. | A rate cap does not specify medium concentration, gas percentage or mass transfer. |
+| Steady-state balances | Require modeled production and consumption to cancel. | This does not calculate metabolite concentrations or reaction kinetics. |
+| Retained maintenance and medium | Keep the surrounding assumptions fixed for the comparison. | A feasible result depends on these assumptions; one altered bound is not a complete new physiological condition. |
+| Biomass assembly and drain | Convert composition requirements into the growth objective. | Maximizing the drain is not a direct measurement of cell growth. |
+| FVA growth floor | Restrict each minimum/maximum calculation to sufficiently high growth. | Separate endpoints need not coexist and are not statistical uncertainty bounds. |
+
 The stoichiometric matrix, $`S`$, records which metabolites each reaction consumes or produces. Its rows distinguish modeled metabolites, including their compartments; its columns distinguish reactions. The vector $`v`$ contains reaction rates. Conventional flux balance analysis (FBA) imposes
 
 ```math
