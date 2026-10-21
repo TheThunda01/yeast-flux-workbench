@@ -1,6 +1,6 @@
 # References and source roles
 
-References are cited by author and year. The [reference audit](reference-audit.json) records the checked metadata, source role and exact access limits for every item below. Checks were completed on 21 October 2026 UTC as part of the review dated 20 October in the user’s local date. Earlier discovery and access records remain in the [literature review](literature-review.md).
+References are cited by author and year. The [reference audit](reference-audit.json) records the checked metadata, source role and exact access limits for every item below. Checks were completed on 21 October 2026 UTC as part of the review dated 20 October in the user’s local date. Earlier discovery and access records remain in the [literature review](literature-review.md). The [21 October maintenance review](review-2026-10-21.md) adds separately dated source rechecks without replacing those earlier access records.
 
 ## Model and biological context
 
@@ -12,7 +12,7 @@ References are cited by author and year. The [reference audit](reference-audit.j
 
 ## Constraint-based methods
 
-- **Orth JD, Thiele I, Palsson BØ. (2010). What is flux balance analysis?. Nature Biotechnology, 28(3), 245–248.** [DOI: 10.1038/nbt.1614](https://doi.org/10.1038/nbt.1614); [PMID 20212490](https://pubmed.ncbi.nlm.nih.gov/20212490/). Steady-state stoichiometry, flux bounds, biomass objectives, alternative optima, and limits concerning kinetics/concentrations.
+- **Orth JD, Thiele I, Palsson BØ. (2010). What is flux balance analysis? Nature Biotechnology, 28(3), 245–248.** [DOI: 10.1038/nbt.1614](https://doi.org/10.1038/nbt.1614); [PMID 20212490](https://pubmed.ncbi.nlm.nih.gov/20212490/). Steady-state stoichiometry, flux bounds, biomass objectives, alternative optima, and limits concerning kinetics/concentrations.
 
 - **Kenefake D et al. (2022). An improved algorithm for flux variability analysis. BMC Bioinformatics, 23(1), 550.** [DOI: 10.1186/s12859-022-05089-9](https://doi.org/10.1186/s12859-022-05089-9); [PMID 36536290](https://pubmed.ncbi.nlm.nih.gov/36536290/). FVA as separate conditional reaction minima and maxima with an objective-retention factor.
 
@@ -37,3 +37,7 @@ References are cited by author and year. The [reference audit](reference-audit.j
 ## Reuse and interpretation
 
 The input files retain their upstream license and attribution. A software citation documents an interface; a methodological citation documents an idea. Neither demonstrates that the assumptions fit these data or that the project has been experimentally validated. See [assumptions](assumptions.md) for that distinction.
+
+## Repository portability
+
+- **Git project contributors. gitattributes: text and eol attributes.** [Official documentation](https://git-scm.com/docs/gitattributes), checked 21 October 2026. Explains how line-ending conversion and `-text` affect the exact bytes used by source fingerprints. The fresh-checkout validation is recorded in the [maintenance review](review-2026-10-21.md).

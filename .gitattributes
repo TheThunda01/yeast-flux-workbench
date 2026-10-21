@@ -1,3 +1,7 @@
+* text=auto eol=lf
+data/UPSTREAM_LICENSE.md -text
+data/minimal_Y6.yml -text
+data/provenance.json -text
 *.mat -text
 *.npz -text
 *.png -text
