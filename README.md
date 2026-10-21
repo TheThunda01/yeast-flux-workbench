@@ -1,10 +1,10 @@
-# Yeast Flux Workbench
+# Yeast flux workbench
 
-Which metabolic conclusions follow from a model's constraints, and which depend on the particular solution a solver returns? This project explores that question in a curated yeast network using sparse linear programming and inspectable flux ranges.
+Which metabolic conclusions follow from a model's constraints, and which depend on the particular solution a solver returns? This project explores that question in a curated yeast network. A flux is a reaction rate; linear programming finds the best value of a linear objective subject to constraints. Sparse storage keeps only the nonzero entries of the reaction matrix.
 
 ## Why this project
 
-Genome-scale models make biological assumptions concrete: reactions conserve modeled metabolites, nutrients enter through bounded exchanges, and a chosen objective defines an optimum. Those assumptions deserve as much attention as the final growth number. This workbench follows them from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
+Genome-scale models describe many reactions across an organism’s metabolism. They make biological assumptions concrete: reactions conserve modeled metabolites, nutrients enter through bounded exchanges, and a chosen objective defines an optimum. Those assumptions deserve as much attention as the final growth number. This workbench follows them from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
 
 ## What it does
 
@@ -13,7 +13,9 @@ Genome-scale models make biological assumptions concrete: reactions conserve mod
 - Calculates 36 selected flux-variability ranges across two scenarios and three growth requirements. It records the requested requirement and a small numerical slack separately.
 - Checks mass balance, bounds and primal–dual agreement; independently checks saved flux vectors and re-solves optima/ranges using another HiGHS algorithm.
 
-The source is [community-curated Yeast9](https://doi.org/10.1038/s44320-024-00060-7), pinned to [release v9.1.1](https://github.com/SysBioChalmers/yeast-GEM/releases/tag/v9.1.1). No gene engineering, new organism model, or experimental validation is claimed.
+Flux balance analysis (FBA) finds an optimum; flux variability analysis (FVA) finds each selected reaction’s permitted minimum and maximum at a specified growth requirement. Primal–dual agreement compares the optimization problem with its mathematical bounding counterpart.
+
+The source is [Zhang et al.’s (2024) community-curated Yeast9](https://doi.org/10.1038/s44320-024-00060-7), pinned to [release v9.1.1](https://github.com/SysBioChalmers/yeast-GEM/releases/tag/v9.1.1). No gene engineering, new organism model, or experimental validation is claimed.
 
 ## Quick start
 
@@ -30,7 +32,7 @@ The 530 kB model and source license are included; the analysis needs no network 
 
 ## Example results
 
-The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**. Limiting the oxygen-uptake cap to 1 while retaining the glucose cap of 1 gives about **0.0420 h⁻¹**. These are solutions to the specified optimization problem, not measured growth rates.
+The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour. Limiting the oxygen-uptake cap to 1 while retaining the glucose cap of 1 gives about **0.0420 h⁻¹**. These are solutions to the specified optimization problem, not measured growth rates.
 
 | Output | What to inspect |
 | --- | --- |
@@ -50,7 +52,7 @@ The plotted intervals are individual feasible ranges. Endpoints from different r
 
 This is an educational analysis of a fixed aerobic model, useful for learning sparse optimization, checking scenario assumptions, and examining alternative optimal solutions. It retains all deposited bounds except the two explicitly changed exchange lower bounds. The fixed maintenance requirement helps explain why the no-glucose case is infeasible.
 
-Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dynamic constraints. Lowering oxygen alone does not create a complete anaerobic model, and these results do not validate the Crabtree effect. Standard FVA may permit internal cycles or reach arbitrary numerical bounds. See the [practical-use contract](docs/practical-use.md) before adapting a scenario.
+Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dynamic constraints. Lowering oxygen alone does not create a complete anaerobic model, and these results do not validate the Crabtree effect, aerobic fermentation under particular carbon conditions. Standard FVA may permit internal cycles or reach arbitrary numerical bounds. See the [practical-use contract](docs/practical-use.md) before adapting a scenario.
 
 ## Documentation
 
@@ -64,8 +66,10 @@ Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dy
 | [Practical use](docs/practical-use.md) | Input/output and failure contracts, worked run and next improvements. |
 | [Literature review](docs/literature-review.md) / [search record](docs/search-log.json) | Bounded review and source-to-code decisions. |
 
+Definitions and interpretation: [glossary](docs/glossary.md), [assumptions](docs/assumptions.md), [reference audit](docs/reference-audit.json) and [dated review](docs/review-2026-10-20.md).
+
 ## Development and reuse
 
-Twelve tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals and the full-model verification. CI runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
+Twelve tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals and the full-model verification. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
 
 Original code is [MIT licensed](LICENSE). The model and its medium definition retain [CC BY 4.0 attribution](data/UPSTREAM_LICENSE.md); the MIT license does not replace those terms.

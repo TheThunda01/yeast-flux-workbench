@@ -6,9 +6,11 @@ Use the workbench to learn how environmental bounds and a growth requirement sha
 
 ## Input and output contract
 
-The input is the exact [v9.1.1 MAT snapshot](../data/README.md), plus `scenarios.json`. Each scenario has a unique alphanumeric/underscore name, a nonnegative glucose-uptake cap, a strictly positive oxygen-uptake cap, an expected status and a Boolean FVA flag. Units are model flux units: exchanges in mmol gDW⁻¹ h⁻¹ and the biomass drain in h⁻¹. Bounds are not medium concentrations. Selected reaction IDs must exist and be unique; growth fractions must be unique numbers in `(0,1]`.
+The input is the exact [v9.1.1 MAT snapshot](../data/README.md), plus `scenarios.json`. Each scenario has a unique alphanumeric/underscore name, a nonnegative glucose-uptake cap, a strictly positive oxygen-uptake cap, an expected status and a Boolean FVA flag. Units are model flux units: exchanges in mmol gDW⁻¹ h⁻¹ (millimoles per gram dry cell weight per hour) and the biomass drain in h⁻¹. Bounds are not medium concentrations. Selected reaction IDs must exist and be unique; growth fractions must be unique numbers in `(0,1]`.
 
 Only glucose and oxygen exchange lower bounds change. The rest of the supplied aerobic medium, fixed maintenance and biomass chemistry remain. Zero oxygen is deliberately unsupported by this scenario interface because a physiological anaerobic model requires additional changes.
+
+Here FBA means flux balance analysis, the constrained optimization of reaction rates; FVA means flux variability analysis, the allowed range for a selected rate at a growth requirement.
 
 The run creates `analysis.json`, `scenarios.csv`, `fva.csv`, `fba_fluxes.npz`, `report.md`, two PNGs and `manifest.json`. `--no-plots` omits the PNGs and removes previous owned PNGs in that output directory. All full-model vectors are numerical arrays; load the NPZ with `allow_pickle=False`. The manifest records source/config/code hashes, solver options and versions.
 
@@ -44,3 +46,5 @@ This analysis does not reproduce the full upstream validation suite. It does not
 2. **Loop-aware analysis:** compare selected ranges against a documented loopless method; retain the ordinary-FVA baseline and explain which mathematical constraints changed.
 3. **Medium audit expansion:** inspect all relevant boundary reactions and compartments; require tests distinguishing nutrient exchanges from biomass drains before supporting new medium files.
 4. **Independent implementation check:** compare the pinned cases with a versioned COBRApy/GLPK run using the identical bounds and objective; report numerical tolerances and disagreements rather than silently selecting a solver.
+
+For definitions, see the [glossary](glossary.md); for the rationale and limits of each material choice, see the [assumptions](assumptions.md).

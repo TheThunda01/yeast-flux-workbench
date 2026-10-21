@@ -1,0 +1,301 @@
+{
+  "review_date": "2026-10-20",
+  "scope": "Scientific and editorial recheck of authored documentation and its substantive sources. Verification performed 2026-10-21 UTC during the review dated 2026-10-20 in the user’s local date.",
+  "limits": [
+    "Targeted source verification, not a new comprehensive systematic literature review. Historical searches and results are preserved.",
+    "full_text means the relevant accessible body was inspected; limitations state partial extraction coverage where applicable.",
+    "Metadata-only entries support provenance or attribution only. Published findings do not validate this project’s own results."
+  ],
+  "references": [
+    {
+      "id": "zhang2024",
+      "source_type": "peer_reviewed_article",
+      "title": "Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community",
+      "authors": "Zhang C et al.",
+      "year": 2024,
+      "url": "https://doi.org/10.1038/s44320-024-00060-7",
+      "doi": "10.1038/s44320-024-00060-7",
+      "pmid": "39134886",
+      "checked_on": "2026-10-21",
+      "access_level": "full_text",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Community-curated model context and limitations; central carbon pathways are represented in the reconstruction."
+      ],
+      "limitations": [
+        "Current pass read abstract and first 12,000 of 46,211 extracted characters, including model/central-metabolism sections. The historical search log records broader prior access. Neither establishes that the paper’s model and validation results are identical to v9.1.1."
+      ],
+      "corrections": [],
+      "citation": "Zhang C et al.. (2024). Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community. Molecular Systems Biology, 20(10), 1134–1150.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39134886/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11450192/"
+      ]
+    },
+    {
+      "id": "lu2019",
+      "source_type": "peer_reviewed_article",
+      "title": "A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism",
+      "authors": "Lu H et al.",
+      "year": 2019,
+      "url": "https://doi.org/10.1038/s41467-019-11581-3",
+      "doi": "10.1038/s41467-019-11581-3",
+      "pmid": "31395883",
+      "checked_on": "2026-10-21",
+      "access_level": "abstract",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Community and versioned model-development context."
+      ],
+      "limitations": [
+        "Abstract and metadata inspected; derived-model predictions are not reproduced here."
+      ],
+      "corrections": [],
+      "citation": "Lu H et al.. (2019). A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism. Nature Communications, 10(1), 3586.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/31395883/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687777/"
+      ]
+    },
+    {
+      "id": "moreno2022",
+      "source_type": "peer_reviewed_article",
+      "title": "Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors",
+      "authors": "Moreno-Paz S et al.",
+      "year": 2022,
+      "url": "https://doi.org/10.1111/1751-7915.13995",
+      "doi": "10.1111/1751-7915.13995",
+      "pmid": "35048533",
+      "checked_on": "2026-10-21",
+      "access_level": "abstract",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "The study adds enzyme constraints and dynamic simulation to compare growth behavior, motivating caution about conventional static FBA."
+      ],
+      "limitations": [
+        "Abstract-level recheck in this pass; the preserved historical review records earlier full-text access. Its predictions and Crabtree comparisons do not validate this workbench."
+      ],
+      "corrections": [],
+      "citation": "Moreno-Paz S et al.. (2022). Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors. Microbial Biotechnology, 15(5), 1434–1445.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/35048533/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9049605/"
+      ]
+    },
+    {
+      "id": "orth2010",
+      "source_type": "peer_reviewed_article",
+      "title": "What is flux balance analysis?",
+      "authors": "Orth JD, Thiele I, Palsson BØ",
+      "year": 2010,
+      "url": "https://doi.org/10.1038/nbt.1614",
+      "doi": "10.1038/nbt.1614",
+      "pmid": "20212490",
+      "checked_on": "2026-10-21",
+      "access_level": "full_text",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Steady-state stoichiometry, flux bounds, biomass objectives, alternative optima, and limits concerning kinetics/concentrations."
+      ],
+      "limitations": [
+        "The full extracted primer was read (11,594 characters); supplementary files were not independently appraised. Its worked organism is not this yeast model."
+      ],
+      "corrections": [],
+      "citation": "Orth JD, Thiele I, Palsson BØ. (2010). What is flux balance analysis?. Nature Biotechnology, 28(3), 245–248.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/20212490/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3108565/"
+      ]
+    },
+    {
+      "id": "kenefake2022",
+      "source_type": "peer_reviewed_article",
+      "title": "An improved algorithm for flux variability analysis",
+      "authors": "Kenefake D et al.",
+      "year": 2022,
+      "url": "https://doi.org/10.1186/s12859-022-05089-9",
+      "doi": "10.1186/s12859-022-05089-9",
+      "pmid": "36536290",
+      "checked_on": "2026-10-21",
+      "access_level": "full_text",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "FVA as separate conditional reaction minima and maxima with an objective-retention factor."
+      ],
+      "limitations": [
+        "Current pass read abstract and first 12,000 of 44,516 extracted characters, including the FVA formulation. The proposed acceleration algorithm is not implemented or benchmarked here."
+      ],
+      "corrections": [],
+      "citation": "Kenefake D et al.. (2022). An improved algorithm for flux variability analysis. BMC Bioinformatics, 23(1), 550.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/36536290/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9761963/"
+      ]
+    },
+    {
+      "id": "schellenberger2011",
+      "source_type": "peer_reviewed_article",
+      "title": "Elimination of thermodynamically infeasible loops in steady-state metabolic models",
+      "authors": "Schellenberger J, Lewis NE, Palsson BØ",
+      "year": 2011,
+      "url": "https://doi.org/10.1016/j.bpj.2010.12.3707",
+      "doi": "10.1016/j.bpj.2010.12.3707",
+      "pmid": "21281568",
+      "checked_on": "2026-10-21",
+      "access_level": "abstract",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Ordinary steady-state flux formulations can admit thermodynamically infeasible internal loops."
+      ],
+      "limitations": [
+        "Abstract-level appraisal; no loopless algorithm is implemented and contact with a large bound does not itself prove a loop."
+      ],
+      "corrections": [],
+      "citation": "Schellenberger J, Lewis NE, Palsson BØ. (2011). Elimination of thermodynamically infeasible loops in steady-state metabolic models. Biophysical Journal, 100(3), 544–553.",
+      "alternate_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/21281568/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3030201/"
+      ]
+    },
+    {
+      "id": "yeast_release",
+      "source_type": "official_data_or_software",
+      "title": "yeast-GEM release v9.1.1",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/releases/tag/v9.1.1",
+      "version": "v9.1.1, published 2026-08-30",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Exact release identity and change history."
+      ],
+      "limitations": [
+        "Release metadata is not independent validation; the analysis also fixes commit and file hash."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "yeast_model",
+      "source_type": "official_data_or_software",
+      "title": "yeast-GEM.mat",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/blob/2d594ae1c4a2d550ccef120d96a58c7bbf586255/model/yeast-GEM.mat",
+      "version": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "checked_on": "2026-10-21",
+      "access_level": "metadata_only",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Local pinned MAT parsed: 2,748 metabolites, 4,105 reactions, 1,143 genes; r_2111 biomass drain, r_4041 assembly, r_4046 fixed ATP maintenance; selected exchange signs."
+      ],
+      "limitations": [
+        "Current remote binary fetch returned an error. The published-head baseline and bundled provenance hash were retained and locally verified; no new successful binary retrieval is claimed. Counts are snapshot-specific, not substituted from the paper."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "yeast_minimal",
+      "source_type": "official_data_or_software",
+      "title": "minimal_Y6.yml",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/blob/2d594ae1c4a2d550ccef120d96a58c7bbf586255/data/conditions/minimal_Y6.yml",
+      "version": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "The official preset declares an aerobic glucose-limited medium and exact exchange bounds/reset instructions."
+      ],
+      "limitations": [
+        "The project retains the deposited MAT background and changes two bounds; it does not freshly execute every preset operation. Upstream code comments cite additional papers that are not independently used as evidence here."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "yeast_anaerobic",
+      "source_type": "official_data_or_software",
+      "title": "anaerobic.yml",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/blob/2d594ae1c4a2d550ccef120d96a58c7bbf586255/data/conditions/anaerobic.yml",
+      "version": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "The official anaerobic transformation changes additional bounds and biomass/cofactor assumptions beyond oxygen."
+      ],
+      "limitations": [
+        "Only the preset instructions are inspected. Their physiological adequacy and the papers cited within upstream comments are not independently validated."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "yeast_conditions",
+      "source_type": "official_data_or_software",
+      "title": "yeastgem.conditions Python wrapper",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/blob/2d594ae1c4a2d550ccef120d96a58c7bbf586255/code/python/yeastgem/conditions.py",
+      "version": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Official condition wrapper applies additional preparation and delegates generic condition handling."
+      ],
+      "limitations": [
+        "Inspected for provenance/interpretation, not incorporated or benchmarked as a dependency."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "yeast_license",
+      "source_type": "official_data_or_software",
+      "title": "yeast-GEM upstream license",
+      "authors": "SysBioChalmers and yeast-GEM contributors",
+      "year": 2026,
+      "url": "https://github.com/SysBioChalmers/yeast-GEM/blob/2d594ae1c4a2d550ccef120d96a58c7bbf586255/LICENSE.md",
+      "version": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "The upstream file states Creative Commons Attribution 4.0 International."
+      ],
+      "limitations": [
+        "License text and attribution retained; this audit is not legal advice about additional downstream uses."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    },
+    {
+      "id": "scipy_linprog_highs",
+      "source_type": "official_data_or_software",
+      "title": "SciPy 1.17.0: linprog_highs",
+      "authors": "SciPy developers",
+      "year": 2026,
+      "url": "https://docs.scipy.org/doc/scipy-1.17.0/reference/optimize.linprog-highs.html",
+      "version": "1.17.0",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "Linear minimization, bounds/constraints, HiGHS solver status, feasibility tolerances and marginals."
+      ],
+      "limitations": [
+        "Different algorithms solve the same model; their agreement does not provide independent biological validation."
+      ],
+      "corrections": [],
+      "alternate_urls": []
+    }
+  ]
+}
