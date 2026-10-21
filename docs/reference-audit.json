@@ -26,10 +26,24 @@
         "Current pass read abstract and first 12,000 of 46,211 extracted characters, including model/central-metabolism sections. The historical search log records broader prior access. Neither establishes that the paper’s model and validation results are identical to v9.1.1."
       ],
       "corrections": [],
-      "citation": "Zhang C et al.. (2024). Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community. Molecular Systems Biology, 20(10), 1134–1150.",
+      "citation": "Zhang C et al. (2024). Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community. Molecular Systems Biology, 20(10), 1134–1150.",
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/39134886/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC11450192/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39134886/",
+          "access_level": "abstract",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. The abstract was re-read for the limited claim used in this project.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -51,10 +65,24 @@
         "Abstract and metadata inspected; derived-model predictions are not reproduced here."
       ],
       "corrections": [],
-      "citation": "Lu H et al.. (2019). A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism. Nature Communications, 10(1), 3586.",
+      "citation": "Lu H et al. (2019). A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism. Nature Communications, 10(1), 3586.",
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/31395883/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC6687777/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/31395883/",
+          "access_level": "metadata_only",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. This pass did not appraise the article body.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -76,10 +104,24 @@
         "Abstract-level recheck in this pass; the preserved historical review records earlier full-text access. Its predictions and Crabtree comparisons do not validate this workbench."
       ],
       "corrections": [],
-      "citation": "Moreno-Paz S et al.. (2022). Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors. Microbial Biotechnology, 15(5), 1434–1445.",
+      "citation": "Moreno-Paz S et al. (2022). Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors. Microbial Biotechnology, 15(5), 1434–1445.",
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/35048533/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC9049605/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/35048533/",
+          "access_level": "metadata_only",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. This pass did not appraise the article body.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -105,6 +147,20 @@
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/20212490/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC3108565/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/20212490/",
+          "access_level": "abstract",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. The abstract was re-read for the limited claim used in this project.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -126,10 +182,24 @@
         "Current pass read abstract and first 12,000 of 44,516 extracted characters, including the FVA formulation. The proposed acceleration algorithm is not implemented or benchmarked here."
       ],
       "corrections": [],
-      "citation": "Kenefake D et al.. (2022). An improved algorithm for flux variability analysis. BMC Bioinformatics, 23(1), 550.",
+      "citation": "Kenefake D et al. (2022). An improved algorithm for flux variability analysis. BMC Bioinformatics, 23(1), 550.",
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/36536290/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC9761963/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/36536290/",
+          "access_level": "abstract",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. The abstract was re-read for the limited claim used in this project.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -155,6 +225,20 @@
       "alternate_urls": [
         "https://pubmed.ncbi.nlm.nih.gov/21281568/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC3030201/"
+      ],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/21281568/",
+          "access_level": "abstract",
+          "verified_fields": [
+            "article title",
+            "issue year",
+            "DOI"
+          ],
+          "finding": "Title, issue year and DOI agree with the cited item. The abstract was re-read for the limited claim used in this project.",
+          "limits": "No full-text reappraisal or new systematic search is claimed; earlier access records are preserved."
+        }
       ]
     },
     {
@@ -215,7 +299,16 @@
         "The project retains the deposited MAT background and changes two bounds; it does not freshly execute every preset operation. Upstream code comments cite additional papers that are not independently used as evidence here."
       ],
       "corrections": [],
-      "alternate_urls": []
+      "alternate_urls": [],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/data/conditions/minimal_Y6.yml",
+          "access_level": "official_documentation",
+          "finding": "Retrieved exact source preset; SHA-256 b7504fe8d826446f9c1e0aecaf388ef644d2cdbd045215b6c3f7ec519c9e7b94 matches bundled bytes. Preset reset instructions remain distinct from retaining deposited model bounds.",
+          "limits": "Targeted source/version check, not independent validation of the project's scientific result."
+        }
+      ]
     },
     {
       "id": "yeast_anaerobic",
@@ -235,7 +328,16 @@
         "Only the preset instructions are inspected. Their physiological adequacy and the papers cited within upstream comments are not independently validated."
       ],
       "corrections": [],
-      "alternate_urls": []
+      "alternate_urls": [],
+      "rechecks": [
+        {
+          "review_date": "2026-10-21",
+          "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/data/conditions/anaerobic.yml",
+          "access_level": "official_documentation",
+          "finding": "The source preset changes additional bounds and biomass/cofactor assumptions. This confirms the limit on interpreting an oxygen-cap sweep as anaerobic physiology; the preset was inspected, not executed.",
+          "limits": "Targeted source/version check, not independent validation of the project's scientific result."
+        }
+      ]
     },
     {
       "id": "yeast_conditions",
@@ -296,6 +398,28 @@
       ],
       "corrections": [],
       "alternate_urls": []
+    },
+    {
+      "id": "git-attributes",
+      "source_type": "official_documentation",
+      "title": "Git gitattributes: text and eol attributes",
+      "authors": [
+        "Git project contributors"
+      ],
+      "year": null,
+      "url": "https://git-scm.com/docs/gitattributes",
+      "checked_on": "2026-10-21",
+      "access_level": "official_documentation",
+      "metadata_status": "verified",
+      "supported_claims": [
+        "The text/eol attributes control line-ending conversion; unsetting text preserves bytes at checkin and checkout."
+      ],
+      "limitations": [
+        "The documentation explains Git behavior. The separate fresh-checkout run checks this repository's attributes."
+      ],
+      "corrections": [
+        "Added explicit source-byte preservation and LF rules after a Windows checkout changed two checksum-locked text files."
+      ]
     }
   ]
 }

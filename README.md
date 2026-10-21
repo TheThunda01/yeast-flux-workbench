@@ -36,6 +36,8 @@ python -m unittest discover -s tests -v
 
 The 530 kB model and source license are included; the analysis needs no network or commercial solver. To keep a new run separate, use `python run.py --output-dir my_results` and `python verify_results.py --results-dir my_results`. `--no-plots` skips figures. The included `scenarios.json` is the full scenario contract.
 
+Git attributes preserve the exact source-file bytes and LF line endings needed by the fingerprint checks, including on Windows. Do not re-save the bundled model, medium or license files to change their encoding or line endings.
+
 ## Example results
 
 The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour. Limiting the oxygen-uptake cap to 1 while retaining the glucose cap of 1 gives about **0.0420 h⁻¹**. These are solutions to the specified optimization problem, not measured growth rates.
@@ -71,6 +73,8 @@ This is an educational analysis of a fixed aerobic model, useful for learning sp
 Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dynamic constraints. Lowering oxygen alone does not create a complete anaerobic model, and these results do not validate the Crabtree effect, aerobic fermentation under particular carbon conditions. Standard FVA may permit internal cycles or reach arbitrary numerical bounds. See the [practical-use contract](docs/practical-use.md) before adapting a scenario.
 
 ## Documentation
+
+The [21 October 2026 maintenance and scientific review](docs/review-2026-10-21.md) records the latest checks and their limits. Earlier review records remain available below.
 
 | Guide | Purpose |
 | --- | --- |
