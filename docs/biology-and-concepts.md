@@ -14,11 +14,11 @@ Cells also require energy beyond the modeled cost of making new biomass. A non-g
 
 ## Turning reactions into a constrained problem
 
-The stoichiometric matrix, $S$, records which metabolites each reaction consumes or produces. Its rows distinguish modeled metabolites, including their compartments; its columns distinguish reactions. The vector $v$ contains reaction rates. Conventional flux balance analysis (FBA) imposes
+The stoichiometric matrix, $`S`$, records which metabolites each reaction consumes or produces. Its rows distinguish modeled metabolites, including their compartments; its columns distinguish reactions. The vector $`v`$ contains reaction rates. Conventional flux balance analysis (FBA) imposes
 
-$$
+```math
 Sv=0, \qquad l\leq v\leq u,
-$$
+```
 
 then maximizes a linear objective, here biomass production. The first condition is a steady-state balance: modeled production and consumption cancel for each balanced metabolite. It does not say reactions have stopped, metabolite concentrations are zero, or the entire growing culture is unchanging. FBA does not calculate concentrations or reaction kinetics. These assumptions and distinctions follow [Orth et al. (2010)](https://doi.org/10.1038/nbt.1614).
 
@@ -30,7 +30,7 @@ Tightening only an uptake cap shrinks the feasible set. With the same maximizati
 
 Different flux distributions can satisfy the same balances and achieve the same biomass objective. A solver returns one optimum, but that does not make every reaction rate in it uniquely determined. Flux variability analysis, or FVA, asks for the smallest and largest feasible value of each selected reaction while retaining the other constraints. [Kenefake et al. (2022)](https://doi.org/10.1186/s12859-022-05089-9) formalize this distinction.
 
-Let $z^*$ be the best biomass objective. Before the small numerical relaxation described in the [methods](methods.md), requiring $c^Tv\geq0.99z^*$ keeps flux states that achieve at least 99% of that optimum. The fraction is an analyst's restriction on the feasible set, **not a 99% confidence level**. Reducing it can admit more alternatives. Each reaction's minimum and maximum come from separate optimization problems; all reported endpoints need not be achievable simultaneously. These ranges contain no sampling-based probability statement about cells.
+Let $`z^*`$ be the best biomass objective. Before the small numerical relaxation described in the [methods](methods.md), requiring $`c^Tv\geq0.99z^*`$ keeps flux states that achieve at least 99% of that optimum. The fraction is an analyst's restriction on the feasible set, **not a 99% confidence level**. Reducing it can admit more alternatives. Each reaction's minimum and maximum come from separate optimization problems; all reported endpoints need not be achievable simultaneously. These ranges contain no sampling-based probability statement about cells.
 
 Solver status also matters. An infeasible problem has no flux vector satisfying the declared constraints; that does not prove biological impossibility. Numerical residuals and bound violations help distinguish a well-solved model problem from an unreliable calculation. Read them alongside the biological assumptions, not as substitutes for them.
 

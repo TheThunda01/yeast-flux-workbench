@@ -24,8 +24,8 @@ These definitions explain how terms are used in this project. A software check, 
 | Term | Meaning here |
 | --- | --- |
 | Reconstruction; genome-scale model; yeast-GEM | A reconstruction collects reaction and gene knowledge; a genome-scale model organizes it for calculation. yeast-GEM is the upstream community model. |
-| Stoichiometry; stoichiometric matrix S | Stoichiometry records amounts consumed and produced in each reaction. Matrix S has metabolite rows and reaction columns; negative entries mean consumption. |
-| Steady state; Sv=0 | Each modeled balanced metabolite has matched production and consumption. It does not mean zero flux or an unchanged growing culture. |
+| Stoichiometry; stoichiometric matrix $`S`$ | Stoichiometry records amounts consumed and produced in each reaction. Matrix $`S`$ has metabolite rows and reaction columns; negative entries mean consumption. |
+| Steady state; $`Sv=0`$ | Each modeled balanced metabolite has matched production and consumption. It does not mean zero flux or an unchanged growing culture. |
 | Sparse matrix; nonzero | A sparse matrix has mostly zero entries; sparse storage retains its nonzero values and their locations efficiently. Here, nonzeros are nonzero stoichiometric coefficients, not extra reactions. |
 | Flux balance analysis (FBA) | Optimization of a linear combination of fluxes subject to stoichiometric balance and bounds. Here the objective is the biomass drain. |
 | Linear program (LP); objective; optimum | An LP optimizes a linear objective with linear constraints. An optimum is the best permitted objective value; several flux vectors can share it. |
@@ -35,7 +35,7 @@ These definitions explain how terms are used in this project. A software check, 
 | Infeasible; unbounded | Infeasible means no vector meets the constraints. Unbounded means the objective can improve without a finite limit. Neither is interchangeable with a timeout or zero growth. |
 | Degeneracy; alternative optima | Degeneracy can complicate solver behavior; alternative optima are distinct feasible flux vectors with the same best objective. A single solution need not identify all reaction rates uniquely. |
 | Primal; dual; marginal; duality gap | The primal is the original LP; the dual is a related bounding problem. Marginals are reported sensitivities/multipliers. Their objective gap is used as a numerical consistency check. |
-| Residual; tolerance; floating point | A balance residual is the departure from Sv=0. A tolerance permits small numerical discrepancies due to approximate floating-point arithmetic. |
+| Residual; tolerance; floating point | A balance residual is the departure from $`Sv=0`$. A tolerance permits small numerical discrepancies due to approximate floating-point arithmetic. |
 | HiGHS; dual simplex; interior point | HiGHS supplies LP solvers. The analysis uses its dual-simplex algorithm and the verifier uses an interior-point algorithm for the same model. |
 | Internal cycle; thermodynamic constraint; loopless | An internal cycle circulates flux without net external conversion. Thermodynamic restrictions concern physically permitted reaction directions. Loopless methods add restrictions absent from ordinary FVA. |
 | Artificial bound; confidence interval | A large bound such as ±1000 can be a computational convention. A confidence interval is a sampling-based statistical construct; an FVA range is not one. |
