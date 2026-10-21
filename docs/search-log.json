@@ -1,0 +1,307 @@
+{
+  "search_date": "2026-10-20",
+  "scope": "Rapid evidence review for a pinned S. cerevisiae v9.1.1 FBA/FVA educational workbench. Model provenance, steady-state constraints, flux nonuniqueness and interpretation limits. No engineered strain design or new empirical validation.",
+  "inclusion_criteria": [
+    "Primary model/method papers supporting the declared computational question; official model/license/format/solver sources.",
+    "Foundational papers retained without date limits; newer model paper and current pinned release distinguished."
+  ],
+  "exclusion_criteria": [
+    "Organism applications, product optimization, genetic engineering and unrelated biomarker studies.",
+    "Claims about dynamic/enzyme-constrained models not transferred to conventional FBA."
+  ],
+  "searches": [
+    {
+      "id": "M1",
+      "source": "PubMed connector",
+      "query": "(Saccharomyces cerevisiae[Title/Abstract]) AND (\"Yeast8\"[Title/Abstract] OR \"Yeast9\"[Title/Abstract] OR \"Yeast7\"[Title/Abstract])",
+      "query_translation": "\"saccharomyces cerevisiae\"[Title/Abstract] AND (\"Yeast8\"[Title/Abstract] OR \"Yeast9\"[Title/Abstract])",
+      "sort": "publication_date",
+      "date_filter": null,
+      "max_results": 10,
+      "total_count": 10,
+      "returned_count": 10,
+      "returned_pmids": [
+        "41917214",
+        "42297013",
+        "39134886",
+        "38273672",
+        "38007732",
+        "35858410",
+        "35048533",
+        "34674718",
+        "34342535",
+        "31395883"
+      ],
+      "warnings": [
+        "\"Yeast7\"[Title/Abstract]"
+      ],
+      "note": "Executed once during feasibility and repeated to retain structured metadata; duplicate results counted once."
+    },
+    {
+      "id": "F1",
+      "source": "PubMed connector",
+      "query": "(\"flux variability analysis\"[Title] OR \"What is flux balance analysis\"[Title])",
+      "query_translation": "\"flux variability analysis\"[Title]",
+      "sort": "publication_date",
+      "date_filter": null,
+      "max_results": 10,
+      "total_count": 8,
+      "returned_count": 8,
+      "returned_pmids": [
+        "36536290",
+        "32993482",
+        "29349465",
+        "24222423",
+        "23390138",
+        "21501263",
+        "21501261",
+        "20920235"
+      ],
+      "warnings": [
+        "\"What is flux balance analysis\"[Title]"
+      ]
+    },
+    {
+      "id": "F2",
+      "source": "PubMed connector",
+      "query": "\"What is flux balance analysis\"[Title]",
+      "sort": "publication_date",
+      "date_filter": null,
+      "max_results": 5,
+      "total_count": 0,
+      "returned_count": 0,
+      "returned_pmids": []
+    },
+    {
+      "id": "L1",
+      "source": "PubMed connector",
+      "query": "\"thermodynamically infeasible loops\"[Title/Abstract] AND Schellenberger[Author]",
+      "sort": "relevance",
+      "date_filter": null,
+      "max_results": 5,
+      "max_abstract_chars": 5000,
+      "max_nested_results": 12,
+      "total_count": 1,
+      "returned_count": 1,
+      "returned_pmids": [
+        "21281568"
+      ],
+      "has_more": false
+    }
+  ],
+  "screening": {
+    "distinct_search_hits": 19,
+    "seeded_primary_record": 1,
+    "total_distinct_scope_records": 20,
+    "retained_primary_papers": 6,
+    "decisions": [
+      {
+        "pmid": "41917214",
+        "title": "Investigating uncharacterised genes in Saccharomyces cerevisiae using robot scientists.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "42297013",
+        "title": "Systems biology of yeast metabolism.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "39134886",
+        "title": "Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community.",
+        "decision": "Include for model/method scope; access detail below."
+      },
+      {
+        "pmid": "38273672",
+        "title": "Interpreting protein abundance in Saccharomyces cerevisiae through relational learning.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "38007732",
+        "title": "Improvement of Oleanolic Acid Production in Saccharomyces Cerevisiae Based on OptKnock Framework.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "35858410",
+        "title": "Genome-scale modeling drives 70-fold improvement of intracellular heme production in Saccharomyces cerevisiae.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "35048533",
+        "title": "Enzyme-constrained models predict the dynamics of Saccharomyces cerevisiae growth in continuous, batch and fed-batch bioreactors.",
+        "decision": "Include for model/method scope; access detail below."
+      },
+      {
+        "pmid": "34674718",
+        "title": "Metabolic flux sampling predicts strain-dependent differences related to aroma production among commercial wine yeasts.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "34342535",
+        "title": "A Multiphase Multiobjective Dynamic Genome-Scale Model Shows Different Redox Balancing among Yeast Species of the Saccharomyces Genus in Fermentation.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "31395883",
+        "title": "A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism.",
+        "decision": "Include for model/method scope; access detail below."
+      },
+      {
+        "pmid": "36536290",
+        "title": "An improved algorithm for flux variability analysis.",
+        "decision": "Include for model/method scope; access detail below."
+      },
+      {
+        "pmid": "32993482",
+        "title": "VFFVA: dynamic load balancing enables large-scale flux variability analysis.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "29349465",
+        "title": "Exploring candidate biomarkers for lung and prostate cancers using gene expression and flux variability analysis.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "24222423",
+        "title": "Flux variability analysis: application to developing oilseed rape embryos using toolboxes for constraint-based modeling.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "23390138",
+        "title": "Fast thermodynamically constrained flux variability analysis.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "21501263",
+        "title": "Metabolic network reconstruction and flux variability analysis of storage synthesis in developing oilseed rape (Brassica napus L.) embryos.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "21501261",
+        "title": "Computational analysis of storage synthesis in developing Brassica napus L. (oilseed rape) embryos: flux variability analysis in relation to ¹³C metabolic flux analysis.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "20920235",
+        "title": "Computationally efficient flux variability analysis.",
+        "decision": "Exclude: application, different method scope, review, or unnecessary additional method paper."
+      },
+      {
+        "pmid": "20212490",
+        "title": "What is flux balance analysis?",
+        "decision": "Include seeded verified primer; exact-title query returned zero, direct PMID retrieval succeeded."
+      },
+      {
+        "pmid": "21281568",
+        "title": "Elimination of thermodynamically infeasible loops in steady-state metabolic models.",
+        "decision": "Include for ordinary-FVA loop caveat only; abstract-only after full-text error."
+      }
+    ],
+    "access": [
+      {
+        "pmid": "39134886",
+        "pmcid": "PMC11450192",
+        "level": "Full text",
+        "text_offsets": [
+          0
+        ],
+        "max_text_chars": 50000,
+        "total_chars": 46211
+      },
+      {
+        "pmid": "31395883",
+        "level": "Citation and abstract only"
+      },
+      {
+        "pmid": "20212490",
+        "pmcid": "PMC3108565",
+        "level": "Full text",
+        "text_offsets": [
+          0
+        ],
+        "max_text_chars": 30000,
+        "total_chars": 11594
+      },
+      {
+        "pmid": "36536290",
+        "pmcid": "PMC9761963",
+        "level": "Full text",
+        "text_offsets": [
+          0,
+          30000
+        ],
+        "max_text_chars": [
+          30000,
+          50000
+        ],
+        "total_chars": 44516
+      },
+      {
+        "pmid": "35048533",
+        "pmcid": "PMC9049605",
+        "level": "Full text",
+        "text_offsets": [
+          0
+        ],
+        "max_text_chars": 50000,
+        "total_chars": 39752
+      },
+      {
+        "pmid": "21281568",
+        "pmcid": "PMC3030201",
+        "level": "Abstract only",
+        "reason": "Full-text tool internal error"
+      }
+    ],
+    "notes": [
+      "Single-reviewer bounded retrieval, not exhaustive or preregistered; no formal risk-of-bias assessment.",
+      "Search result titles were screened; full-text appraisal restricted to relevant method/limitation sections.",
+      "Two over-limit full-text requests (max60000) failed argument validation and yielded no text; retried within the allowed limit.",
+      "An incorrectly recalled seeded PMID19888272 retrieved an unrelated nutrition paper and was discarded; it is not counted among the20 scoped records.",
+      "Direct citation/abstract fetches of five seeded records were repeated by the documentation reviewer; author-list clipping in two records was not completed because full author enumeration was not required."
+    ]
+  },
+  "supplementary_sources": [
+    {
+      "source": "GitHub official repository",
+      "repository": "SysBioChalmers/yeast-GEM",
+      "ref": "v9.1.1",
+      "commit": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+      "files": [
+        "README.md",
+        "LICENSE.md",
+        "version.txt",
+        "model/yeast-GEM.mat",
+        "model/dependencies.txt",
+        "data/conditions/minimal_Y6.yml",
+        "data/conditions/anaerobic.yml",
+        "code/python/yeastgem/conditions.py"
+      ],
+      "license": "CC-BY-4.0",
+      "access": "Release/tree/file metadata and relevant source inspected; model downloaded and parsed."
+    },
+    {
+      "source": "Web search",
+      "query": "github SysBioChalmers yeast GEM Yeast9 model license xml",
+      "total_count": null,
+      "selected_urls": [
+        "https://github.com/SysBioChalmers/yeast-GEM"
+      ],
+      "note": "Engine did not provide a complete result total."
+    },
+    {
+      "source": "Official documentation",
+      "url": "https://docs.scipy.org/doc/scipy-1.17.0/reference/optimize.linprog-highs.html",
+      "version": "1.17.0",
+      "access": "LP formulation, statuses and tolerances inspected."
+    }
+  ],
+  "feasibility_check": {
+    "model_shape": [
+      2748,
+      4105
+    ],
+    "model_nonzeros": 15463,
+    "source_sha256": "9f985af321f9ef5e8c6041de3def9e0e95efbed7aff90c81490578f451ace524",
+    "note": "Local sparse LP probe informed tractability; it was not compared with new experiments."
+  }
+}

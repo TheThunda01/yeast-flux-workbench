@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {"name":"aerobic_reference","glucose_uptake_cap":1,"oxygen_uptake_cap":1000,"expected_status":"optimal","run_fva":true},
+    {"name":"oxygen_2","glucose_uptake_cap":1,"oxygen_uptake_cap":2,"expected_status":"optimal","run_fva":false},
+    {"name":"oxygen_1","glucose_uptake_cap":1,"oxygen_uptake_cap":1,"expected_status":"optimal","run_fva":true},
+    {"name":"oxygen_05","glucose_uptake_cap":1,"oxygen_uptake_cap":0.5,"expected_status":"optimal","run_fva":false},
+    {"name":"oxygen_025","glucose_uptake_cap":1,"oxygen_uptake_cap":0.25,"expected_status":"optimal","run_fva":false},
+    {"name":"no_glucose_diagnostic","glucose_uptake_cap":0,"oxygen_uptake_cap":1000,"expected_status":"infeasible","run_fva":false}
+  ],
+  "growth_fractions":[1.0,0.99,0.9],
+  "fva_reactions":["r_1714","r_1992","r_1761","r_1672","r_1808","r_2111"]
+}

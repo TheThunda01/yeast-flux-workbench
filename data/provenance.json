@@ -1,0 +1,31 @@
+{
+  "source": "SysBioChalmers/yeast-GEM",
+  "version": "9.1.1",
+  "commit": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+  "retrieved": "2026-10-20",
+  "license": "CC-BY-4.0",
+  "citation": "10.1038/s44320-024-00060-7",
+  "files": [
+    {
+      "path": "yeast-GEM.mat",
+      "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/model/yeast-GEM.mat",
+      "sha256": "9f985af321f9ef5e8c6041de3def9e0e95efbed7aff90c81490578f451ace524",
+      "bytes": 529680,
+      "modified": false
+    },
+    {
+      "path": "UPSTREAM_LICENSE.md",
+      "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/LICENSE.md",
+      "sha256": "bb5e0179a1e9bdb55634a4303784cf73c297a1dcee27b92cd546bf398075531c",
+      "bytes": 17068,
+      "modified": false
+    },
+    {
+      "path": "minimal_Y6.yml",
+      "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/data/conditions/minimal_Y6.yml",
+      "sha256": "b7504fe8d826446f9c1e0aecaf388ef644d2cdbd045215b6c3f7ec519c9e7b94",
+      "bytes": 2152,
+      "modified": false
+    }
+  ]
+}

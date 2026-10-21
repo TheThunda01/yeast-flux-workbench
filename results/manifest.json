@@ -1,0 +1,54 @@
+{
+  "code_sha256": {
+    "flux_workbench.py": "522c5587f74b7b14311872cf927e045b531983c37ef3043d7ff9298056be3716",
+    "run.py": "3e9d01f2ccf2aa8f369a520777d0b645194f9fed83dbfabb5583beec2c60ee97"
+  },
+  "config_sha256": "4ac25a5af7981f99c06ac8a2142c933042be53f851a8b51c4cc6905df5b5eee3",
+  "model_sha256": "9f985af321f9ef5e8c6041de3def9e0e95efbed7aff90c81490578f451ace524",
+  "outputs": {
+    "analysis.json": {
+      "bytes": 44172,
+      "sha256": "6ba4b7fda87bd662e0cf99f0125b86506ac45cbb3f861a1d747c91f47b34c2fe"
+    },
+    "ethanol_fva.png": {
+      "bytes": 54795,
+      "sha256": "021dcc458d74ada8a580c89c03735a2bd5a4dd3033d7d0c47da1ddb4fa2b65b8"
+    },
+    "fba_fluxes.npz": {
+      "bytes": 19750,
+      "sha256": "57c91d78073c7c0a8998407577ca8a89413d2d582e1f8a457a273eb6dea17e77"
+    },
+    "fva.csv": {
+      "bytes": 5892,
+      "sha256": "94d1db58086441342a1520d4e0a9338e87122910dc302a40077603612ee4d08b"
+    },
+    "growth_constraints.png": {
+      "bytes": 66308,
+      "sha256": "34a1db4158a908e7543275739e101b33ab1be8f9836b901e2c802d5f80ccb5bf"
+    },
+    "report.md": {
+      "bytes": 1014,
+      "sha256": "aa6cc15e1e0d4e0a6bc40bcc7c1f4b74ac9adfce4293bd62d51906b24bb72ee9"
+    },
+    "scenarios.csv": {
+      "bytes": 629,
+      "sha256": "c0add75b76de54f9bb3994f715b7e3bc5f4adf1af397828dca9ae6f4edbcdabd"
+    }
+  },
+  "schema_version": 1,
+  "solver": {
+    "accepted_residual": 1e-07,
+    "method": "highs-ds",
+    "options": {
+      "dual_feasibility_tolerance": 1e-09,
+      "primal_feasibility_tolerance": 1e-09,
+      "time_limit": 30
+    }
+  },
+  "source_manifest_sha256": "d7fb2e89f4e307ca5ba34d33f0a3693c0e5ca87ac6e7c4e80ebe3f7d7f7b254b",
+  "versions": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  }
+}
