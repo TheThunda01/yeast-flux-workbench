@@ -1,10 +1,12 @@
 # Yeast flux workbench
 
-Which metabolic conclusions follow from a model's constraints, and which depend on the particular solution a solver returns? This project explores that question in a curated yeast network. A flux is a reaction rate; linear programming finds the best value of a linear objective subject to constraints. Sparse storage keeps only the nonzero entries of the reaction matrix.
+Which metabolic conclusions follow from a model's constraints, and which depend on the particular solution a solver returns?
+
+This project explores that question in a curated yeast network. It calculates feasible reaction rates, called fluxes, and examines how much they can vary under the same constraints. Linear programming finds the best value of a linear objective subject to those constraints. Sparse storage keeps only the nonzero entries of the reaction matrix.
 
 ## Why this project
 
-Genome-scale models describe many reactions across an organism’s metabolism. They make biological assumptions concrete: reactions conserve modeled metabolites, nutrients enter through bounded exchanges, and a chosen objective defines an optimum. Those assumptions deserve as much attention as the final growth number. This workbench follows them from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
+Model assumptions shape the predicted growth value. In this analysis, fluxes must balance modeled metabolites and obey nutrient-exchange bounds; the solver optimizes a chosen objective. This workbench traces those assumptions from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
 
 Figure 1 follows the bookkeeping from those assumptions to the reported results. It separates the biomass-assembly reaction from the drain that the optimizer maximizes.
 
@@ -38,13 +40,15 @@ python -m unittest discover -s tests -v
 
 On Windows, activate the environment with `.venv\Scripts\activate`.
 
-The 530 kB model and source license are included; the analysis needs no network or commercial solver. The commands above write to and verify `.reproduction/`, keeping the checked-in example intact. Choose another directory with `--output-dir PATH` and pass the same path to the verifier's `--results-dir`; omitting `--output-dir` replaces files in `results/`. `--no-plots` skips figures. The Markdown report uses UTF-8 so its scientific units are preserved across system text encodings. The included `scenarios.json` is the full scenario contract.
+The 530 kB model and source license are included; the analysis needs no network or commercial solver. The included `scenarios.json` is the full scenario contract.
+
+The commands above write to and verify `.reproduction/`, keeping the checked-in example intact. Choose another directory with `--output-dir PATH` and pass the same path to the verifier's `--results-dir`; omitting `--output-dir` replaces files in `results/`. `--no-plots` skips figures. The Markdown report uses UTF-8 to preserve scientific units across system text encodings.
 
 Git attributes preserve the exact source-file bytes and LF line endings needed by the fingerprint checks, including on Windows. Do not re-save the bundled model, medium or license files to change their encoding or line endings.
 
 ## Example results
 
-The aerobic reference produces a modeled biomass flux of about **0.0811 h⁻¹**. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour. Limiting the oxygen-uptake cap to 1 while retaining the glucose cap of 1 gives about **0.0420 h⁻¹**. These are solutions to the specified optimization problem, not measured growth rates.
+Limiting oxygen uptake reduces the optimal biomass flux in this comparison. The aerobic reference produces about **0.0811 h⁻¹**; an oxygen-uptake cap of 1 with the glucose cap retained at 1 gives about **0.0420 h⁻¹**. These are model optima, not measured growth rates. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour.
 
 **Table 1. Where to inspect each part of the result.**
 
@@ -68,13 +72,15 @@ Figures 2 and 3 answer different questions: how the optimum changes under oxygen
 
 **Figure 3. Conditional ethanol-exchange ranges.** Source: [saved FVA results](results/fva.csv). The growth fractions and numerical slack define different feasible sets; the intervals are neither confidence intervals nor samples from a probability distribution.
 
-The plotted intervals are individual feasible ranges. Endpoints from different reactions need not occur in the same solution. Their width is not a confidence interval.
+Each plotted interval describes one reaction's feasible range. Endpoints from different reactions need not occur in the same solution.
 
 ## Practical use and limitations
 
-This is an educational analysis of a fixed aerobic model, useful for learning sparse optimization, checking scenario assumptions, and examining alternative optimal solutions. It retains all deposited bounds except the two explicitly changed exchange lower bounds. The fixed maintenance requirement helps explain why the no-glucose case is infeasible.
+Use this fixed aerobic model to learn sparse optimization, check scenario assumptions, and examine alternative optimal solutions. The analysis retains all deposited bounds except the two explicitly changed exchange lower bounds. The fixed maintenance requirement helps explain why the no-glucose case is infeasible.
 
-Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dynamic constraints. Lowering oxygen alone does not create a complete anaerobic model, and these results do not validate the Crabtree effect, aerobic fermentation under particular carbon conditions. Standard FVA may permit internal cycles or reach arbitrary numerical bounds. See the [practical-use contract](docs/practical-use.md) before adapting a scenario.
+Conventional FBA does not include all enzyme-capacity, kinetic, regulatory or dynamic constraints. Standard FVA may permit internal cycles or reach arbitrary numerical bounds.
+
+Lowering oxygen alone does not create a complete anaerobic model. These results also do not validate the Crabtree effect: aerobic fermentation under particular carbon conditions. See the [practical-use contract](docs/practical-use.md) before adapting a scenario.
 
 ## Documentation
 
