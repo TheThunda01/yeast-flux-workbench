@@ -28,13 +28,17 @@ The source is [Zhang et al.’s (2024) community-curated Yeast9](https://doi.org
 From the repository root, use Python 3.12:
 
 ```sh
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
-python run.py
-python verify_results.py
+python run.py --output-dir .reproduction
+python verify_results.py --results-dir .reproduction
 python -m unittest discover -s tests -v
 ```
 
-The 530 kB model and source license are included; the analysis needs no network or commercial solver. To keep a new run separate, use `python run.py --output-dir my_results` and `python verify_results.py --results-dir my_results`. `--no-plots` skips figures. The included `scenarios.json` is the full scenario contract.
+On Windows, activate the environment with `.venv\Scripts\activate`.
+
+The 530 kB model and source license are included; the analysis needs no network or commercial solver. The commands above write to and verify `.reproduction/`, keeping the checked-in example intact. Choose another directory with `--output-dir PATH` and pass the same path to the verifier's `--results-dir`; omitting `--output-dir` replaces files in `results/`. `--no-plots` skips figures. The Markdown report uses UTF-8 so its scientific units are preserved across system text encodings. The included `scenarios.json` is the full scenario contract.
 
 Git attributes preserve the exact source-file bytes and LF line endings needed by the fingerprint checks, including on Windows. Do not re-save the bundled model, medium or license files to change their encoding or line endings.
 

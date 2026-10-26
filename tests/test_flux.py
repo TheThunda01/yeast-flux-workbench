@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 from scipy.sparse import csc_matrix
@@ -108,12 +109,15 @@ class ReproductionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory();cls.out=Path(cls.temp.name)/'results'
-        cls.result=run(ROOT/'data',ROOT/'scenarios.json',cls.out,make_plots=False)
+        # The report contains units unavailable in the legacy Windows code page.
+        with patch('io.text_encoding', side_effect=lambda encoding, stacklevel=2: encoding or 'cp1252'):
+            cls.result=run(ROOT/'data',ROOT/'scenarios.json',cls.out,make_plots=False)
 
     @classmethod
     def tearDownClass(cls):cls.temp.cleanup()
 
     def test_expected_statuses_and_all_endpoint_diagnostics(self):
+        self.assertIn('mmol gDW⁻¹ h⁻¹', (self.out/'report.md').read_text(encoding='utf-8'))
         self.assertEqual([r['status'] for r in self.result['scenarios']],['optimal']*5+['infeasible'])
         self.assertEqual(len(self.result['ranges']),36)
         for row in self.result['ranges']:

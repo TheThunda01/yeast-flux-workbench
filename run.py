@@ -91,7 +91,7 @@ def run(data_dir, config_path, output_dir, make_plots=True):
                 'The zero-glucose diagnostic is infeasible with the fixed maintenance requirement; no growth value is substituted for a failed solve.', '',
                 'FVA ranges are individual feasible extrema conditional on the declared growth fraction. They are not confidence intervals, may involve different solutions, and can include internal cycles.', '',
                 'Changing oxygen bounds alone does not implement a physiological anaerobic model or validate the Crabtree effect.']
-        (stage/'report.md').write_text('\n'.join(lines)+'\n')
+        (stage/'report.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         if make_plots:plots(result,stage)
         run_manifest={'schema_version':1,'source_manifest_sha256':digest(data_dir/'provenance.json'),
                       'model_sha256':digest(data_dir/'yeast-GEM.mat'),'config_sha256':digest(config_path),
