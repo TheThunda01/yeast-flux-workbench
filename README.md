@@ -103,7 +103,7 @@ Definitions and interpretation: [glossary](docs/glossary.md), [assumptions](docs
 
 ## Development and reuse
 
-Sixteen tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals the full-model verification, stoichiometric network exports, and native-import attribute checks. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
+Twenty tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals, full-model verification, stoichiometric network exports, and native-import attribute and endpoint checks. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
 
 Original code is [MIT licensed](LICENSE). The model and its medium definition retain [CC BY 4.0 attribution](data/UPSTREAM_LICENSE.md); the MIT license does not replace those terms.
 

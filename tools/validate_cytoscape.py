@@ -20,10 +20,27 @@ def digest(path):
 
 def verify_roundtrip(source, imported):
     """Account for Cytoscape's new SUIDs while requiring original attributes."""
+    def indexed(items, field, label):
+        rows = {}
+        for item in items:
+            row = item['data']
+            key = row.get(field)
+            if not isinstance(key, str) or not key or key in rows:
+                raise ValueError(f'{label}: missing or duplicate {field}')
+            rows[key] = row
+        return rows
+
+    imported_nodes = indexed(imported['elements']['nodes'], 'id_original', 'nodes')
+    node_ids = {}
+    for original_id, row in imported_nodes.items():
+        native_id = row.get('id')
+        if native_id is None or str(native_id) == '' or str(native_id) in node_ids.values():
+            raise ValueError('nodes: missing or duplicate native identifier')
+        node_ids[original_id] = str(native_id)
     counts = {}
     for kind in ('nodes', 'edges'):
-        original = {item['data']['id']: item['data'] for item in source['elements'][kind]}
-        actual = {item['data']['id_original']: item['data'] for item in imported['elements'][kind]}
+        original = indexed(source['elements'][kind], 'id', kind)
+        actual = indexed(imported['elements'][kind], 'id_original', kind)
         if original.keys() != actual.keys():
             raise ValueError(f'{kind}: imported identifiers differ')
         for key, expected in original.items():
@@ -32,6 +49,11 @@ def verify_roundtrip(source, imported):
                 imported_field = field + '_original' if field in ('id', 'source', 'target') else field
                 if row.get(imported_field) != value:
                     raise ValueError(f'{key}: changed attribute {field}')
+            if kind == 'edges':
+                for endpoint in ('source', 'target'):
+                    expected_id = node_ids.get(expected[endpoint])
+                    if expected_id is None or str(row.get(endpoint)) != expected_id:
+                        raise ValueError(f'{key}: changed native {endpoint} endpoint')
             if expected.get('fva_status') == 'not_requested':
                 if row.get('fva_minimum') is not None or row.get('fva_maximum') is not None:
                     raise ValueError(f'{key}: missing FVA was replaced by a numerical value')
@@ -116,6 +138,7 @@ def validate(source_path, out, port=1234):
     reactions = [n['data'] for n in source['elements']['nodes'] if n['data']['kind'] == 'reaction']
     report = {'schema_version': 1, 'cytoscape': version, 'input_sha256': digest(source_path),
               'validator_sha256': digest(__file__), 'all_original_attributes_preserved': True,
+              'native_edge_endpoints_preserved': True,
               **counts, 'fva_available': sum(r['fva_status'] == 'available' for r in reactions),
               'fva_not_requested': sum(r['fva_status'] == 'not_requested' for r in reactions),
               'layout': 'force-directed; coordinates may vary between runs',
