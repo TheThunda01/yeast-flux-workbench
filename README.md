@@ -6,6 +6,8 @@ This project explores that question in a curated yeast network. It calculates fe
 
 ## Why this project
 
+This supports [From biological measurements to better experiments](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md) by examining how constraints shape model conclusions and why one numerical solution may leave alternative explanations open.
+
 Model assumptions shape the predicted growth value. In this analysis, fluxes must balance modeled metabolites and obey nutrient-exchange bounds; the solver optimizes a chosen objective. This workbench traces those assumptions from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
 
 Figure 1 follows the bookkeeping from those assumptions to the reported results. It separates the biomass-assembly reaction from the drain that the optimizer maximizes.
