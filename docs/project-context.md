@@ -18,3 +18,7 @@ Learners can follow the analysis from model input to output. Researchers can tes
 Conventional FBA omits some enzyme-capacity, regulatory, and dynamic constraints that influence living cells. [Moreno-Paz et al. (2022)](https://doi.org/10.1111/1751-7915.13995) illustrate why those distinctions matter. Adjusting oxygen alone therefore does not validate anaerobic physiology or reproduce the Crabtree effect here. The workbench makes a limited modeling argument that readers can question, reproduce, and eventually compare with independent measurements.
 
 For definitions, see the [glossary](glossary.md); for the rationale and limits of each material choice, see the [assumptions](assumptions.md).
+
+## Where this fits in the portfolio
+
+The featured [enzyme kinetics study](https://github.com/TheThunda01/enzyme-kinetics-workbench) asks how measurements constrain fitted parameters. This workbench offers a related question about feasible metabolic fluxes under declared constraints. It is a supporting study of model assumptions, with a separate biological system and calculation. Use the [portfolio guide](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md) to return to the featured studies and their measurement-selection questions.
