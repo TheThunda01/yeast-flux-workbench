@@ -20,6 +20,7 @@ Figure 1 follows the bookkeeping from those assumptions to the reported results.
 - Maximizes its biomass objective under five positive oxygen-uptake caps, with a fixed glucose cap. A sixth, no-glucose case is an explicit infeasibility diagnostic.
 - Calculates 36 selected flux-variability ranges across two scenarios and three growth requirements. It records the requested requirement and a small numerical slack separately.
 - Checks mass balance, bounds and primal–dual agreement; independently checks saved flux vectors and re-solves optima/ranges using another HiGHS algorithm.
+- Exports a Cytoscape reaction/metabolite neighborhood with exact stoichiometry, one saved feasible flux vector and explicitly requested versus missing FVA attributes.
 
 Flux balance analysis (FBA) finds an optimum; flux variability analysis (FVA) finds each selected reaction’s permitted minimum and maximum at a specified growth requirement. Primal–dual agreement compares the optimization problem with its mathematical bounding counterpart.
 
@@ -74,6 +75,8 @@ Figures 2 and 3 answer different questions: how the optimum changes under oxygen
 
 Each plotted interval describes one reaction's feasible range. Endpoints from different reactions need not occur in the same solution.
 
+The [Cytoscape inspection guide](docs/cytoscape-inspection.md) adds an editable network of 18 reactions and 34 metabolites around the six FVA reactions. Its 54 edges come directly from the pinned stoichiometric matrix. It labels missing ranges explicitly and keeps forward reaction direction separate from the sign of a saved flux.
+
 ## Practical use and limitations
 
 Use this fixed aerobic model to learn sparse optimization, check scenario assumptions, and examine alternative optimal solutions. The analysis retains all deposited bounds except the two explicitly changed exchange lower bounds. The fixed maintenance requirement helps explain why the no-glucose case is infeasible.
@@ -100,7 +103,7 @@ Definitions and interpretation: [glossary](docs/glossary.md), [assumptions](docs
 
 ## Development and reuse
 
-Twelve tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals and the full-model verification. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
+Sixteen tests cover known toy optima/ranges, unsigned objective handling, infeasible/unbounded problems, input mistakes, source corruption, residuals the full-model verification, stoichiometric network exports, and native-import attribute checks. Continuous integration (CI) runs tests, the analysis and the result checker. This is AI-assisted original analysis code, with explicit literature and upstream attribution.
 
 Original code is [MIT licensed](LICENSE). The model and its medium definition retain [CC BY 4.0 attribution](data/UPSTREAM_LICENSE.md); the MIT license does not replace those terms.
 

@@ -1,0 +1,1273 @@
+{
+  "data": {
+    "name": "Yeast9 FVA neighborhood: aerobic_reference, growth target 0.99",
+    "scope": "One-hop neighborhood around selected FVA metabolites; partial network, not a balanced submodel.",
+    "arrow_meaning": "Stoichiometric forward direction, not inferred direction of net flux.",
+    "flux_meaning": "One saved feasible FBA optimum; alternative optima can differ.",
+    "fva_meaning": "Marginal feasible ranges at the declared growth target/slack; endpoints need not be jointly attainable."
+  },
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "rxn:r_0370",
+          "name": "r_0370",
+          "label": "exo-1,3-beta-glucan glucohydrase",
+          "kind": "reaction",
+          "reaction_id": "r_0370",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1024",
+          "name": "r_1024",
+          "label": "sucrose hydrolyzing enzyme",
+          "kind": "reaction",
+          "reaction_id": "r_1024",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1166",
+          "name": "r_1166",
+          "label": "glucose transport",
+          "kind": "reaction",
+          "reaction_id": "r_1166",
+          "fba_flux": 1.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1171",
+          "name": "r_1171",
+          "label": "glycerol transport",
+          "kind": "reaction",
+          "reaction_id": "r_1171",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1172",
+          "name": "r_1172",
+          "label": "glycerol transport via channel",
+          "kind": "reaction",
+          "reaction_id": "r_1172",
+          "fba_flux": 0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1668",
+          "name": "r_1668",
+          "label": "bicarbonate formation",
+          "kind": "reaction",
+          "reaction_id": "r_1668",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1672",
+          "name": "r_1672",
+          "label": "carbon dioxide exchange",
+          "kind": "reaction",
+          "reaction_id": "r_1672",
+          "fba_flux": 2.653006707558461,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": 2.6104456029992726,
+          "fva_maximum": 2.6995770330937954,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1697",
+          "name": "r_1697",
+          "label": "CO2 transport",
+          "kind": "reaction",
+          "reaction_id": "r_1697",
+          "fba_flux": 2.653006707558461,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1714",
+          "name": "r_1714",
+          "label": "D-glucose exchange",
+          "kind": "reaction",
+          "reaction_id": "r_1714",
+          "fba_flux": -1.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": -1.0,
+          "fva_maximum": -0.9903634508813881,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1761",
+          "name": "r_1761",
+          "label": "ethanol exchange",
+          "kind": "reaction",
+          "reaction_id": "r_1761",
+          "fba_flux": 0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": 0.0,
+          "fva_maximum": 0.02151519900437146,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1762",
+          "name": "r_1762",
+          "label": "ethanol transport",
+          "kind": "reaction",
+          "reaction_id": "r_1762",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1808",
+          "name": "r_1808",
+          "label": "glycerol exchange",
+          "kind": "reaction",
+          "reaction_id": "r_1808",
+          "fba_flux": 0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": 0.0,
+          "fva_maximum": 0.015591354795370473,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1979",
+          "name": "r_1979",
+          "label": "O2 transport",
+          "kind": "reaction",
+          "reaction_id": "r_1979",
+          "fba_flux": 2.351929915692417,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_1992",
+          "name": "r_1992",
+          "label": "oxygen exchange",
+          "kind": "reaction",
+          "reaction_id": "r_1992",
+          "fba_flux": -2.351929915692417,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": -2.3982343981415237,
+          "fva_maximum": -2.323862693615573,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_2111",
+          "name": "r_2111",
+          "label": "growth",
+          "kind": "reaction",
+          "reaction_id": "r_2111",
+          "fba_flux": 0.0811002405605833,
+          "flux_units": "h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "available",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99,
+          "fva_minimum": 0.08028913004495342,
+          "fva_maximum": 0.08110024056058314,
+          "requested_growth_floor": 0.08028923815497747,
+          "effective_growth_floor": 0.08028913004495342,
+          "growth_floor_slack": 1.0811002405605834e-07,
+          "touches_artificial_cap": false
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_4041",
+          "name": "r_4041",
+          "label": "biomass pseudoreaction",
+          "kind": "reaction",
+          "reaction_id": "r_4041",
+          "fba_flux": 0.0811002405605833,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_4400",
+          "name": "r_4400",
+          "label": "Maltodextrin glucosidase (maltotriose)",
+          "kind": "reaction",
+          "reaction_id": "r_4400",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": 0.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "rxn:r_4420",
+          "name": "r_4420",
+          "label": "alpha-glucosidase",
+          "kind": "reaction",
+          "reaction_id": "r_4420",
+          "fba_flux": -0.0,
+          "flux_units": "mmol gDW^-1 h^-1",
+          "lower_bound": -1000.0,
+          "upper_bound": 1000.0,
+          "fva_status": "not_requested",
+          "scenario": "aerobic_reference",
+          "growth_fraction": 0.99
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0003",
+          "name": "s_0003",
+          "label": "(1->3)-beta-D-glucan",
+          "kind": "metabolite",
+          "metabolite_id": "s_0003",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0394",
+          "name": "s_0394",
+          "label": "ADP",
+          "kind": "metabolite",
+          "metabolite_id": "s_0394",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0434",
+          "name": "s_0434",
+          "label": "ATP",
+          "kind": "metabolite",
+          "metabolite_id": "s_0434",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0446",
+          "name": "s_0446",
+          "label": "bicarbonate",
+          "kind": "metabolite",
+          "metabolite_id": "s_0446",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0450",
+          "name": "s_0450",
+          "label": "biomass",
+          "kind": "metabolite",
+          "metabolite_id": "s_0450",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0456",
+          "name": "s_0456",
+          "label": "carbon dioxide",
+          "kind": "metabolite",
+          "metabolite_id": "s_0456",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0458",
+          "name": "s_0458",
+          "label": "carbon dioxide",
+          "kind": "metabolite",
+          "metabolite_id": "s_0458",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0554",
+          "name": "s_0554",
+          "label": "D-fructose",
+          "kind": "metabolite",
+          "metabolite_id": "s_0554",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0563",
+          "name": "s_0563",
+          "label": "D-glucose",
+          "kind": "metabolite",
+          "metabolite_id": "s_0563",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0565",
+          "name": "s_0565",
+          "label": "D-glucose",
+          "kind": "metabolite",
+          "metabolite_id": "s_0565",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0680",
+          "name": "s_0680",
+          "label": "ethanol",
+          "kind": "metabolite",
+          "metabolite_id": "s_0680",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0681",
+          "name": "s_0681",
+          "label": "ethanol",
+          "kind": "metabolite",
+          "metabolite_id": "s_0681",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0765",
+          "name": "s_0765",
+          "label": "glycerol",
+          "kind": "metabolite",
+          "metabolite_id": "s_0765",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0766",
+          "name": "s_0766",
+          "label": "glycerol",
+          "kind": "metabolite",
+          "metabolite_id": "s_0766",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0794",
+          "name": "s_0794",
+          "label": "H+",
+          "kind": "metabolite",
+          "metabolite_id": "s_0794",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0796",
+          "name": "s_0796",
+          "label": "H+",
+          "kind": "metabolite",
+          "metabolite_id": "s_0796",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0803",
+          "name": "s_0803",
+          "label": "H2O",
+          "kind": "metabolite",
+          "metabolite_id": "s_0803",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_0805",
+          "name": "s_0805",
+          "label": "H2O",
+          "kind": "metabolite",
+          "metabolite_id": "s_0805",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1096",
+          "name": "s_1096",
+          "label": "lipid",
+          "kind": "metabolite",
+          "metabolite_id": "s_1096",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1106",
+          "name": "s_1106",
+          "label": "maltose",
+          "kind": "metabolite",
+          "metabolite_id": "s_1106",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1207",
+          "name": "s_1207",
+          "label": "NADP(+)",
+          "kind": "metabolite",
+          "metabolite_id": "s_1207",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1212",
+          "name": "s_1212",
+          "label": "NADPH",
+          "kind": "metabolite",
+          "metabolite_id": "s_1212",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1275",
+          "name": "s_1275",
+          "label": "oxygen",
+          "kind": "metabolite",
+          "metabolite_id": "s_1275",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1277",
+          "name": "s_1277",
+          "label": "oxygen",
+          "kind": "metabolite",
+          "metabolite_id": "s_1277",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1322",
+          "name": "s_1322",
+          "label": "phosphate",
+          "kind": "metabolite",
+          "metabolite_id": "s_1322",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_1466",
+          "name": "s_1466",
+          "label": "sucrose",
+          "kind": "metabolite",
+          "metabolite_id": "s_1466",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_3717",
+          "name": "s_3717",
+          "label": "protein",
+          "kind": "metabolite",
+          "metabolite_id": "s_3717",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_3718",
+          "name": "s_3718",
+          "label": "carbohydrate",
+          "kind": "metabolite",
+          "metabolite_id": "s_3718",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_3719",
+          "name": "s_3719",
+          "label": "RNA",
+          "kind": "metabolite",
+          "metabolite_id": "s_3719",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_3720",
+          "name": "s_3720",
+          "label": "DNA",
+          "kind": "metabolite",
+          "metabolite_id": "s_3720",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_4131",
+          "name": "s_4131",
+          "label": "turanose",
+          "kind": "metabolite",
+          "metabolite_id": "s_4131",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_4140",
+          "name": "s_4140",
+          "label": "alpha-maltotriose",
+          "kind": "metabolite",
+          "metabolite_id": "s_4140",
+          "compartment": "extracellular"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_4205",
+          "name": "s_4205",
+          "label": "cofactor",
+          "kind": "metabolite",
+          "metabolite_id": "s_4205",
+          "compartment": "cytoplasm"
+        }
+      },
+      {
+        "data": {
+          "id": "met:s_4206",
+          "name": "s_4206",
+          "label": "ion",
+          "kind": "metabolite",
+          "metabolite_id": "s_4206",
+          "compartment": "cytoplasm"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "r_0370:s_0003",
+          "source": "met:s_0003",
+          "target": "rxn:r_0370",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_0370",
+          "metabolite_id": "s_0003"
+        }
+      },
+      {
+        "data": {
+          "id": "r_0370:s_0565",
+          "source": "rxn:r_0370",
+          "target": "met:s_0565",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_0370",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_0370:s_0805",
+          "source": "met:s_0805",
+          "target": "rxn:r_0370",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_0370",
+          "metabolite_id": "s_0805"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1024:s_0554",
+          "source": "rxn:r_1024",
+          "target": "met:s_0554",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1024",
+          "metabolite_id": "s_0554"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1024:s_0565",
+          "source": "rxn:r_1024",
+          "target": "met:s_0565",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1024",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1024:s_0805",
+          "source": "met:s_0805",
+          "target": "rxn:r_1024",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1024",
+          "metabolite_id": "s_0805"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1024:s_1466",
+          "source": "met:s_1466",
+          "target": "rxn:r_1024",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1024",
+          "metabolite_id": "s_1466"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1166:s_0563",
+          "source": "rxn:r_1166",
+          "target": "met:s_0563",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1166",
+          "metabolite_id": "s_0563"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1166:s_0565",
+          "source": "met:s_0565",
+          "target": "rxn:r_1166",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1166",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1171:s_0765",
+          "source": "rxn:r_1171",
+          "target": "met:s_0765",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1171",
+          "metabolite_id": "s_0765"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1171:s_0766",
+          "source": "met:s_0766",
+          "target": "rxn:r_1171",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1171",
+          "metabolite_id": "s_0766"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1171:s_0794",
+          "source": "rxn:r_1171",
+          "target": "met:s_0794",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1171",
+          "metabolite_id": "s_0794"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1171:s_0796",
+          "source": "met:s_0796",
+          "target": "rxn:r_1171",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1171",
+          "metabolite_id": "s_0796"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1172:s_0765",
+          "source": "met:s_0765",
+          "target": "rxn:r_1172",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1172",
+          "metabolite_id": "s_0765"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1172:s_0766",
+          "source": "rxn:r_1172",
+          "target": "met:s_0766",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1172",
+          "metabolite_id": "s_0766"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1668:s_0446",
+          "source": "rxn:r_1668",
+          "target": "met:s_0446",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1668",
+          "metabolite_id": "s_0446"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1668:s_0458",
+          "source": "met:s_0458",
+          "target": "rxn:r_1668",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1668",
+          "metabolite_id": "s_0458"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1668:s_0796",
+          "source": "rxn:r_1668",
+          "target": "met:s_0796",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1668",
+          "metabolite_id": "s_0796"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1668:s_0805",
+          "source": "met:s_0805",
+          "target": "rxn:r_1668",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1668",
+          "metabolite_id": "s_0805"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1672:s_0458",
+          "source": "met:s_0458",
+          "target": "rxn:r_1672",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1672",
+          "metabolite_id": "s_0458"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1697:s_0456",
+          "source": "met:s_0456",
+          "target": "rxn:r_1697",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1697",
+          "metabolite_id": "s_0456"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1697:s_0458",
+          "source": "rxn:r_1697",
+          "target": "met:s_0458",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1697",
+          "metabolite_id": "s_0458"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1714:s_0565",
+          "source": "met:s_0565",
+          "target": "rxn:r_1714",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1714",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1761:s_0681",
+          "source": "met:s_0681",
+          "target": "rxn:r_1761",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1761",
+          "metabolite_id": "s_0681"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1762:s_0680",
+          "source": "met:s_0680",
+          "target": "rxn:r_1762",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1762",
+          "metabolite_id": "s_0680"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1762:s_0681",
+          "source": "rxn:r_1762",
+          "target": "met:s_0681",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1762",
+          "metabolite_id": "s_0681"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1808:s_0766",
+          "source": "met:s_0766",
+          "target": "rxn:r_1808",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1808",
+          "metabolite_id": "s_0766"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1979:s_1275",
+          "source": "rxn:r_1979",
+          "target": "met:s_1275",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_1979",
+          "metabolite_id": "s_1275"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1979:s_1277",
+          "source": "met:s_1277",
+          "target": "rxn:r_1979",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1979",
+          "metabolite_id": "s_1277"
+        }
+      },
+      {
+        "data": {
+          "id": "r_1992:s_1277",
+          "source": "met:s_1277",
+          "target": "rxn:r_1992",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_1992",
+          "metabolite_id": "s_1277"
+        }
+      },
+      {
+        "data": {
+          "id": "r_2111:s_0450",
+          "source": "met:s_0450",
+          "target": "rxn:r_2111",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_2111",
+          "metabolite_id": "s_0450"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_0394",
+          "source": "rxn:r_4041",
+          "target": "met:s_0394",
+          "interaction": "product",
+          "stoichiometric_coefficient": 55.3,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_0394"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_0434",
+          "source": "met:s_0434",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -55.3,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_0434"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_0450",
+          "source": "rxn:r_4041",
+          "target": "met:s_0450",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_0450"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_0794",
+          "source": "rxn:r_4041",
+          "target": "met:s_0794",
+          "interaction": "product",
+          "stoichiometric_coefficient": 52.3,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_0794"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_0803",
+          "source": "met:s_0803",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -55.3,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_0803"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_1096",
+          "source": "met:s_1096",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_1096"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_1207",
+          "source": "rxn:r_4041",
+          "target": "met:s_1207",
+          "interaction": "product",
+          "stoichiometric_coefficient": 3.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_1207"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_1212",
+          "source": "met:s_1212",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -3.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_1212"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_1322",
+          "source": "rxn:r_4041",
+          "target": "met:s_1322",
+          "interaction": "product",
+          "stoichiometric_coefficient": 55.3,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_1322"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_3717",
+          "source": "met:s_3717",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_3717"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_3718",
+          "source": "met:s_3718",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_3718"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_3719",
+          "source": "met:s_3719",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_3719"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_3720",
+          "source": "met:s_3720",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_3720"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_4205",
+          "source": "met:s_4205",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_4205"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4041:s_4206",
+          "source": "met:s_4206",
+          "target": "rxn:r_4041",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4041",
+          "metabolite_id": "s_4206"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4400:s_0565",
+          "source": "rxn:r_4400",
+          "target": "met:s_0565",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_4400",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4400:s_0805",
+          "source": "met:s_0805",
+          "target": "rxn:r_4400",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4400",
+          "metabolite_id": "s_0805"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4400:s_1106",
+          "source": "rxn:r_4400",
+          "target": "met:s_1106",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_4400",
+          "metabolite_id": "s_1106"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4400:s_4140",
+          "source": "met:s_4140",
+          "target": "rxn:r_4400",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4400",
+          "metabolite_id": "s_4140"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4420:s_0554",
+          "source": "rxn:r_4420",
+          "target": "met:s_0554",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_4420",
+          "metabolite_id": "s_0554"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4420:s_0565",
+          "source": "rxn:r_4420",
+          "target": "met:s_0565",
+          "interaction": "product",
+          "stoichiometric_coefficient": 1.0,
+          "reaction_id": "r_4420",
+          "metabolite_id": "s_0565"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4420:s_0805",
+          "source": "met:s_0805",
+          "target": "rxn:r_4420",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4420",
+          "metabolite_id": "s_0805"
+        }
+      },
+      {
+        "data": {
+          "id": "r_4420:s_4131",
+          "source": "met:s_4131",
+          "target": "rxn:r_4420",
+          "interaction": "reactant",
+          "stoichiometric_coefficient": -1.0,
+          "reaction_id": "r_4420",
+          "metabolite_id": "s_4131"
+        }
+      }
+    ]
+  }
+}

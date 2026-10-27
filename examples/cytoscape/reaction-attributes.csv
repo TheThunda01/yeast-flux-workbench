@@ -1,0 +1,19 @@
+reaction_id,label,scenario,fba_flux,flux_units,lower_bound,upper_bound,fva_status,growth_fraction,fva_minimum,fva_maximum,requested_growth_floor,effective_growth_floor,growth_floor_slack,touches_artificial_cap
+r_0370,"exo-1,3-beta-glucan glucohydrase",aerobic_reference,-0.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_1024,sucrose hydrolyzing enzyme,aerobic_reference,-0.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_1166,glucose transport,aerobic_reference,1.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_1171,glycerol transport,aerobic_reference,-0.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_1172,glycerol transport via channel,aerobic_reference,0.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_1668,bicarbonate formation,aerobic_reference,-0.0,mmol gDW^-1 h^-1,-1000.0,1000.0,not_requested,0.99,,,,,,
+r_1672,carbon dioxide exchange,aerobic_reference,2.653006707558461,mmol gDW^-1 h^-1,0.0,1000.0,available,0.99,2.6104456029992726,2.6995770330937954,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_1697,CO2 transport,aerobic_reference,2.653006707558461,mmol gDW^-1 h^-1,-1000.0,1000.0,not_requested,0.99,,,,,,
+r_1714,D-glucose exchange,aerobic_reference,-1.0,mmol gDW^-1 h^-1,-1.0,1000.0,available,0.99,-1.0,-0.9903634508813881,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_1761,ethanol exchange,aerobic_reference,0.0,mmol gDW^-1 h^-1,0.0,1000.0,available,0.99,0.0,0.02151519900437146,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_1762,ethanol transport,aerobic_reference,-0.0,mmol gDW^-1 h^-1,-1000.0,1000.0,not_requested,0.99,,,,,,
+r_1808,glycerol exchange,aerobic_reference,0.0,mmol gDW^-1 h^-1,0.0,1000.0,available,0.99,0.0,0.015591354795370473,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_1979,O2 transport,aerobic_reference,2.351929915692417,mmol gDW^-1 h^-1,-1000.0,1000.0,not_requested,0.99,,,,,,
+r_1992,oxygen exchange,aerobic_reference,-2.351929915692417,mmol gDW^-1 h^-1,-1000.0,1000.0,available,0.99,-2.3982343981415237,-2.323862693615573,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_2111,growth,aerobic_reference,0.0811002405605833,h^-1,0.0,1000.0,available,0.99,0.08028913004495342,0.08110024056058314,0.08028923815497747,0.08028913004495342,1.0811002405605834e-07,False
+r_4041,biomass pseudoreaction,aerobic_reference,0.0811002405605833,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_4400,Maltodextrin glucosidase (maltotriose),aerobic_reference,-0.0,mmol gDW^-1 h^-1,0.0,1000.0,not_requested,0.99,,,,,,
+r_4420,alpha-glucosidase,aerobic_reference,-0.0,mmol gDW^-1 h^-1,-1000.0,1000.0,not_requested,0.99,,,,,,

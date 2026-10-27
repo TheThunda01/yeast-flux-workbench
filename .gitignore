@@ -3,4 +3,4 @@ __pycache__/
 .venv/
 .flux_results_*/
 .DS_Store
-.reproduction/
+.reproduction*/
