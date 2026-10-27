@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "cytoscape": {
+    "apiVersion": "v1",
+    "cytoscapeVersion": "3.10.5"
+  },
+  "input_sha256": "01f140437a96946143e207422617b9a9ce739d96201173baf1059c19cfaddada",
+  "validator_sha256": "9e2acd926d5cb97d6d75b5a4e52b4175b7643c8bc05c4ead72054f3ef24db553",
+  "all_original_attributes_preserved": true,
+  "native_edge_endpoints_preserved": true,
+  "nodes": 52,
+  "edges": 54,
+  "fva_available": 6,
+  "fva_not_requested": 12,
+  "layout": "force-directed; coordinates may vary between runs",
+  "scope": "Native application import, attribute readback and rendering; not biological validation.",
+  "output_sha256": {
+    "network-preview.png": "bc09b59fb10f7d00c219106e5c93303ab4eb432eea57cb0b73fb139d57b972b6",
+    "visual-style.json": "f7b13acd9b17cd163ece8f3b08134c1d7f0f5072e94af12c9c187952cdb99e65"
+  }
+}

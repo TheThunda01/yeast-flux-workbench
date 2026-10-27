@@ -1,0 +1,85 @@
+{
+  "title": "Yeast9 FVA inspection",
+  "defaults": [
+    {
+      "visualProperty": "NETWORK_BACKGROUND_PAINT",
+      "value": "#FFFFFF"
+    },
+    {
+      "visualProperty": "NODE_FILL_COLOR",
+      "value": "#65B6CF"
+    },
+    {
+      "visualProperty": "NODE_SIZE",
+      "value": 28
+    },
+    {
+      "visualProperty": "NODE_LABEL_COLOR",
+      "value": "#18333E"
+    },
+    {
+      "visualProperty": "NODE_LABEL_FONT_SIZE",
+      "value": 10
+    },
+    {
+      "visualProperty": "NODE_BORDER_WIDTH",
+      "value": 1.2
+    },
+    {
+      "visualProperty": "NODE_BORDER_PAINT",
+      "value": "#24566B"
+    },
+    {
+      "visualProperty": "EDGE_WIDTH",
+      "value": 1.4
+    },
+    {
+      "visualProperty": "EDGE_STROKE_UNSELECTED_PAINT",
+      "value": "#8C9CA3"
+    },
+    {
+      "visualProperty": "EDGE_TARGET_ARROW_SHAPE",
+      "value": "DELTA"
+    }
+  ],
+  "mappings": [
+    {
+      "mappingType": "passthrough",
+      "mappingColumn": "name",
+      "mappingColumnType": "String",
+      "visualProperty": "NODE_LABEL"
+    },
+    {
+      "mappingType": "discrete",
+      "mappingColumn": "kind",
+      "mappingColumnType": "String",
+      "visualProperty": "NODE_SHAPE",
+      "map": [
+        {
+          "key": "reaction",
+          "value": "ROUND_RECTANGLE"
+        },
+        {
+          "key": "metabolite",
+          "value": "ELLIPSE"
+        }
+      ]
+    },
+    {
+      "mappingType": "discrete",
+      "mappingColumn": "fva_status",
+      "mappingColumnType": "String",
+      "visualProperty": "NODE_FILL_COLOR",
+      "map": [
+        {
+          "key": "available",
+          "value": "#EAB75E"
+        },
+        {
+          "key": "not_requested",
+          "value": "#DCE2E5"
+        }
+      ]
+    }
+  ]
+}

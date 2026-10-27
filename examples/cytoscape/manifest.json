@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "source_sha256": {
+    "data/yeast-GEM.mat": "9f985af321f9ef5e8c6041de3def9e0e95efbed7aff90c81490578f451ace524",
+    "scenarios.json": "4ac25a5af7981f99c06ac8a2142c933042be53f851a8b51c4cc6905df5b5eee3",
+    "results/analysis.json": "6ba4b7fda87bd662e0cf99f0125b86506ac45cbb3f861a1d747c91f47b34c2fe",
+    "results/fba_fluxes.npz": "57c91d78073c7c0a8998407577ca8a89413d2d582e1f8a457a273eb6dea17e77",
+    "results/manifest.json": "f8af2a2b914186adf698e6a7551ba5e75ce4ceb858ea3116a2ba7f61ee7ed0ae"
+  },
+  "builder_sha256": "62a710567a66b620ee2c705b8e6bb75a0c5dfcd4ee4dbd33553ba9452ccc1a36",
+  "upstream_model": "yeast-GEM v9.1.1; CC BY 4.0; see data/README.md",
+  "scenario": "aerobic_reference",
+  "growth_fraction": 0.99,
+  "seed_reactions": [
+    "r_1714",
+    "r_1992",
+    "r_1761",
+    "r_1672",
+    "r_1808",
+    "r_2111"
+  ],
+  "selection_rule": "Export the one-hop FVA inspection neighborhood without inventing pathways.\n\nThe selected FVA reactions seed a reaction/metabolite bipartite graph. Include\nevery reaction sharing a seed metabolite, then all participants in those\nreactions. This is a partial model neighborhood, not a balanced submodel.",
+  "reaction_nodes": 18,
+  "metabolite_nodes": 34,
+  "edges": 54,
+  "fva_annotated_reactions": 6,
+  "source_result_verification": {
+    "verified": true,
+    "scenarios": 6,
+    "fva_rows": 36,
+    "check": "Saved-vector feasibility plus HiGHS interior-point optimum/range check; not experimental validation."
+  },
+  "output_sha256": {
+    "fva-neighborhood.cyjs": "01f140437a96946143e207422617b9a9ce739d96201173baf1059c19cfaddada",
+    "reaction-attributes.csv": "accaf59847d241de78d8c4bbe3d61715de19f24a8e5dd878b32ef42f9c400a04"
+  }
+}
