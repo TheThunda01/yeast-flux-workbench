@@ -127,6 +127,19 @@ class ReproductionTests(unittest.TestCase):
                 self.assertEqual(diagnostics['status'],'optimal')
                 self.assertLessEqual(diagnostics['max_balance_residual'],1e-7)
 
+    def test_report_only_describes_configured_outputs(self):
+        config = json.loads((ROOT / 'scenarios.json').read_text())
+        config['scenarios'] = [config['scenarios'][1]]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config.json').write_text(json.dumps(config))
+            run(ROOT / 'data', root / 'config.json', root / 'out', make_plots=False)
+            report = (root / 'out' / 'report.md').read_text(encoding='utf-8')
+            self.assertIn('1 of 1 configured scenarios', report)
+            self.assertNotIn('glucose uptake set to zero', report)
+            self.assertNotIn('FVA interval', report)
+            self.assertNotIn('.png)', report)
+
     def test_saved_vectors_and_interior_point_crosscheck(self):
         result=verify(ROOT/'data',ROOT/'scenarios.json',self.out)
         self.assertTrue(result['verified']);self.assertEqual(result['fva_rows'],36)
