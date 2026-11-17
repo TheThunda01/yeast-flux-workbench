@@ -1,16 +1,12 @@
 # Yeast flux workbench
 
-Which metabolic conclusions follow from a model's constraints, and which depend on the particular solution a solver returns?
-
-This project explores that question in a curated yeast network. It calculates feasible reaction rates, called fluxes, and examines how much they can vary under the same constraints. Linear programming finds the best value of a linear objective subject to those constraints. Sparse storage keeps only the nonzero entries of the reaction matrix.
+Run six scenarios in a published yeast metabolism model to see how an oxygen-uptake limit changes the highest feasible growth rate. Then inspect the range of reaction rates, or fluxes, compatible with that growth. Two flux patterns can support the same growth rate.
 
 ## Why this project
 
 This supports [From biological measurements to better experiments](https://github.com/TheThunda01/TheThunda01/blob/main/PROJECT_GUIDE.md) by examining how constraints shape model conclusions and why one numerical solution may leave alternative explanations open.
 
-Model assumptions shape the predicted growth value. In this analysis, fluxes must balance modeled metabolites and obey nutrient-exchange bounds; the solver optimizes a chosen objective. This workbench traces those assumptions from a pinned model to a reproducible report. Start with the [project context](docs/project-context.md) and [biology guide](docs/biology-and-concepts.md).
-
-Figure 1 follows the bookkeeping from those assumptions to the reported results. It separates the biomass-assembly reaction from the drain that the optimizer maximizes.
+Figure 1 follows the calculation from nutrient uptake to the biomass drain that the solver maximizes. Every feasible solution must balance the modeled metabolites and respect the bounds on each reaction. The [biology guide](docs/biology-and-concepts.md) explains what that bookkeeping represents.
 
 ![Model-bookkeeping diagram connecting exchange bounds and retained constraints to balanced fluxes, biomass assembly, the growth drain, and FBA or FVA outputs](docs/figures/model-bookkeeping.svg)
 
@@ -51,11 +47,9 @@ Git attributes preserve the exact source-file bytes and LF line endings needed b
 
 ## Example results
 
-Limiting oxygen uptake reduces the optimal biomass flux in this comparison. The aerobic reference produces about **0.0811 h⁻¹**; an oxygen-uptake cap of 1 with the glucose cap retained at 1 gives about **0.0420 h⁻¹**. These are model optima, not measured growth rates. Exchange caps use mmol gDW⁻¹ h⁻¹: millimoles per gram dry cell weight per hour.
+With the glucose uptake cap held at 1, lowering the oxygen uptake cap from 1000 to 1 reduces the modeled growth optimum from **0.0811 to 0.0420 h⁻¹**. The caps are in millimoles per gram of dry cell weight per hour. Compare the rows `aerobic_reference` and `oxygen_1` in the [scenario table](results/scenarios.csv).
 
 **Table 1. Where to inspect each part of the result.**
-
-Table 1 links the files behind Figures 2 and 3 and the associated numerical checks.
 
 | Output | What to inspect |
 | --- | --- |
