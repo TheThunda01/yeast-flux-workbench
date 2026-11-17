@@ -1,6 +1,7 @@
 # Yeast flux constraints
 
-These are model solutions under declared bounds, not measurements.
+The model reached a growth optimum in 5 of 6 configured scenarios.
+Each cap limits uptake. The solver maximizes the biomass objective under the remaining model constraints.
 
 | Scenario | Oxygen cap | Glucose cap | Status | Maximum biomass flux |
 | --- | ---: | ---: | --- | ---: |
@@ -11,10 +12,14 @@ These are model solutions under declared bounds, not measurements.
 | oxygen_025 | 0.25 | 1 | optimal | 0.020341 |
 | no_glucose_diagnostic | 1000 | 0 | infeasible | — |
 
-Exchange fluxes use mmol gDW⁻¹ h⁻¹; biomass flux uses h⁻¹. Uptake is negative.
+Exchange fluxes use mmol gDW⁻¹ h⁻¹. Growth uses h⁻¹. A negative exchange flux means uptake.
 
-The zero-glucose diagnostic is infeasible with the fixed maintenance requirement; no growth value is substituted for a failed solve.
+With glucose uptake set to zero, `no_glucose_diagnostic` has no feasible solution under the retained constraints. The dash in the growth column marks that outcome.
 
-FVA ranges are individual feasible extrema conditional on the declared growth fraction. They are not confidence intervals, may involve different solutions, and can include internal cycles.
+Each FVA interval gives one reaction’s feasible range at the stated growth requirement. Different endpoints can come from different flux vectors, including vectors with internal cycles.
 
-Changing oxygen bounds alone does not implement a physiological anaerobic model or validate the Crabtree effect.
+![Modeled growth against the oxygen uptake cap for feasible scenarios](growth_constraints.png)
+
+![Feasible flux interval by growth requirement for the reaction named on the plot](ethanol_fva.png)
+
+These predictions describe steady states in the pinned yeast model. Measured growth and flux would be needed to assess agreement with yeast cultures.

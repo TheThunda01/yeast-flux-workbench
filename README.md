@@ -43,7 +43,7 @@ python -m unittest discover -s tests -v
 
 On Windows, activate the environment with `.venv\Scripts\activate`.
 
-The 530 kB model and source license are included; the analysis needs no network or commercial solver. The included `scenarios.json` is the full scenario contract.
+The 530 kB model and source license are included; the analysis needs no network or commercial solver. The included `scenarios.json` sets the six default scenarios. Pass a different file with `--config PATH` to both the runner and verifier. Open the generated `report.md` to see how many scenarios reached an optimum, which cases were infeasible and the plots requested for that run.
 
 The commands above write to and verify `.reproduction/`, keeping the checked-in example intact. Choose another directory with `--output-dir PATH` and pass the same path to the verifier's `--results-dir`; omitting `--output-dir` replaces files in `results/`. `--no-plots` skips figures. The Markdown report uses UTF-8 to preserve scientific units across system text encodings.
 

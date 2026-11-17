@@ -29,8 +29,10 @@ def plots(result, directory):
     for cap in sorted({r['glucose_uptake_cap'] for r in rows}):
         subset=sorted([r for r in rows if r['glucose_uptake_cap']==cap],key=lambda r:r['oxygen_uptake_cap'])
         ax.plot([r['oxygen_uptake_cap'] for r in subset], [r['growth'] for r in subset], 'o-',label=f'Glucose cap {cap:g}')
-    ax.set_xscale('log'); ax.set(xlabel='Declared oxygen-uptake cap (mmol gDW⁻¹ h⁻¹; log scale)',
-                                ylabel='Maximum modeled biomass flux (h⁻¹)', title='Model growth under declared uptake constraints\nLines connect evaluated scenarios')
+    ax.set_xscale('log')
+    ax.set(xlabel='Oxygen uptake cap (mmol gDW⁻¹ h⁻¹, log scale)',
+           ylabel='Maximum modeled biomass flux (h⁻¹)', title='Growth across feasible scenarios')
+    ax.set_ylim(bottom=0)
     if rows:ax.legend(frameon=False)
     else:ax.text(.5,.5,'No optimal scenarios; inspect the status report',ha='center',transform=ax.transAxes)
     ax.spines[['top','right']].set_visible(False); ax.grid(alpha=.2)
@@ -82,15 +84,28 @@ def run(data_dir, config_path, output_dir, make_plots=True):
         csv_file(stage/'scenarios.csv',result['scenarios'],['name','glucose_uptake_cap','oxygen_uptake_cap','status','growth','max_balance_residual','max_bound_violation','duality_gap'])
         csv_file(stage/'fva.csv',result['ranges'],['scenario','reaction','name','growth_fraction','requested_growth_floor','growth_floor','growth_floor_slack','minimum','maximum','minimum_status','maximum_status','touches_artificial_cap'])
         np.savez_compressed(stage/'fba_fluxes.npz',**result['vectors'])
-        lines=['# Yeast flux constraints', '', 'These are model solutions under declared bounds, not measurements.', '',
+        scenarios = result['scenarios']
+        optimal = sum(row['status'] == 'optimal' for row in scenarios)
+        lines=['# Yeast flux constraints', '',
+               f"The model reached a growth optimum in {optimal} of {len(scenarios)} configured scenarios.",
+               'Each cap limits uptake. The solver maximizes the biomass objective under the remaining model constraints.', '',
                '| Scenario | Oxygen cap | Glucose cap | Status | Maximum biomass flux |', '| --- | ---: | ---: | --- | ---: |']
         for r in result['scenarios']:
             growth='—' if r['growth'] is None else f"{r['growth']:.6f}"
             lines.append(f"| {r['name']} | {r['oxygen_uptake_cap']} | {r['glucose_uptake_cap']} | {r['status']} | {growth} |")
-        lines+=['', 'Exchange fluxes use mmol gDW⁻¹ h⁻¹; biomass flux uses h⁻¹. Uptake is negative.', '',
-                'The zero-glucose diagnostic is infeasible with the fixed maintenance requirement; no growth value is substituted for a failed solve.', '',
-                'FVA ranges are individual feasible extrema conditional on the declared growth fraction. They are not confidence intervals, may involve different solutions, and can include internal cycles.', '',
-                'Changing oxygen bounds alone does not implement a physiological anaerobic model or validate the Crabtree effect.']
+        lines += ['', 'Exchange fluxes use mmol gDW⁻¹ h⁻¹. Growth uses h⁻¹. A negative exchange flux means uptake.']
+        for row in scenarios:
+            if row['status'] == 'infeasible' and row['glucose_uptake_cap'] == 0:
+                lines += ['', f"With glucose uptake set to zero, `{row['name']}` has no feasible solution under the retained constraints. The dash in the growth column marks that outcome."]
+        if result['ranges']:
+            lines += ['', 'Each FVA interval gives one reaction’s feasible range at the stated growth requirement. '
+                      'Different endpoints can come from different flux vectors, including vectors with internal cycles.']
+        if make_plots and optimal:
+            lines += ['', '![Modeled growth against the oxygen uptake cap for feasible scenarios](growth_constraints.png)']
+        if make_plots and result['ranges']:
+            lines += ['', '![Feasible flux interval by growth requirement for the reaction named on the plot](ethanol_fva.png)']
+        lines += ['', 'These predictions describe steady states in the pinned yeast model. '
+                  'Measured growth and flux would be needed to assess agreement with yeast cultures.']
         (stage/'report.md').write_text('\n'.join(lines)+'\n', encoding='utf-8')
         if make_plots:plots(result,stage)
         run_manifest={'schema_version':1,'source_manifest_sha256':digest(data_dir/'provenance.json'),
